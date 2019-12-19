@@ -1,0 +1,106 @@
+//helper functions 
+$base-font-size: 16px;
+
+@function px-to-rem($target, $context: $base-font-size) {
+  @return ($target / $context) * 1rem;
+} 
+
+@function strip-unit($number) { 
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+}
+
+//grid - used px so it is easier to export as javascript breakpoints
+$breakpoint_small: 640px;
+$breakpoint_medium: 1000px; 
+$breakpoint_large: 1300px; 
+
+$container_max: px-to-rem(1170px);
+
+// exporting vars to use in javascript files
+// import styles from this file into desired js file and call breakpoint to access it
+:export { 
+    breakpointSmall: strip-unit($breakpoint_small);
+    breakpointXlarge: strip-unit($breakpoint_medium);
+    breakpointXxlarge: strip-unit($breakpoint_large);
+}
+
+
+//FONT STYLES SONNNNN
+
+//header-text sizes DOE
+$size_main_header: px-to-rem(28px);
+$size_main_header_small: px-to-rem(36px);
+$size_main_header_medium: px-to-rem(45px);
+
+$size_secondary_header: px-to-rem(22px);
+$size_secondary_header_small: px-to-rem(24px);
+$size_secondary_header_xlarge: px-to-rem(30px);
+
+
+//content-text sizes DOE
+$size_body: px-to-rem(14px);
+$size_body_medium: px-to-rem(13px);
+$size_body_large: px-to-rem(14px);
+
+
+//colors -- undecided on what I wantzzz
+$primary: #0F6FB3;
+$secondary: #D6F3FF;
+$tertiary: #0094D3;
+
+
+//custom animations
+$custom_animation: cubic-bezier(0.85, 0.08, 0.08, 0.99);
+
+
+// global mixin helpers 
+
+@mixin flexCenterXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin absoluteCenterXY {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// set values to false if you only want a breakpoint specific container
+@mixin container ($max-width, $mobile: true, $tablet: true, $xlarge: true, $xxlarge: true) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @if ($mobile){
+        padding-left: 1rem;
+        padding-right: 1rem;   
+    }
+
+    @if ($tablet){
+        @media screen and (min-width: $breakpoint_small){
+            padding-right: 2.8rem;
+            padding-left: 2.8rem;
+        }
+    }
+
+    @if ($xlarge){
+        @media (min-width: $breakpoint_xlarge){
+            padding-right: 8.2rem; 
+            padding-left: 8.2rem;
+        }
+    }
+
+    @if ($xxlarge){
+        @media (min-width: $breakpoint_xxlarge){
+            max-width: $max-width;
+            box-sizing: content-box;
+        }
+    }
+}

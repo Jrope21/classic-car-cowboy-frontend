@@ -1,0 +1,51 @@
+@import './global.variables.scss';
+@import './reset-normalize.styles.scss';
+@import './vendor/typographic/scss/typographic.scss';
+
+main{
+  @include typographic;
+  p {
+    font-weight:400; font-style: normal;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: $breakpoint_small){
+  .container {
+    padding-right: 2.8rem; // 44.8px
+    padding-left: 2.8rem;
+  }
+}
+
+@media (min-width: $breakpoint_medium){ 
+  .container {
+      padding-right: 4.2rem;
+      padding-left: 4.2rem;
+  }
+}
+
+@media (min-width: $breakpoint_large){
+  .container {
+      max-width: calc(#{$container_max} + 8.4rem); 
+      box-sizing: border-box;
+  }
+}
+
+.show-for-sr {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
