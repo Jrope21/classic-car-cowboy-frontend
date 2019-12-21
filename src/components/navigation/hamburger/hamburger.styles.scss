@@ -1,0 +1,36 @@
+@import '../../../css/global.variables.scss';
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-bottom: 2.2px solid black;
+    cursor: pointer;
+    width: 24px;
+    height: 22px;
+    transition: width .25s cubic-bezier(0.85, 0.08, 0.08, 0.99);
+    margin-top: -4px;
+
+    &::before {
+        content: '';
+        display: block;
+        border-bottom: 2.5px solid black;
+        width: 24px;
+        transition: width .25s cubic-bezier(0.85, 0.08, 0.08, 0.99);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        border-bottom: 2.2px solid black;
+        width: 20px;
+        transition: width .25s ease;
+    }
+
+    &:hover {
+        &::after {
+            width: 24px;
+        }
+    }
+}

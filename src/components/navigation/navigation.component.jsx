@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './navigation.styles.scss'
+
 import { Link, useStaticQuery, graphql} from 'gatsby'
 
-import './navigation.styles.scss'
+import Hamburger from './hamburger/hamburger.component.jsx';
+import Logo from '../logo/logo.component.jsx';
 
 function Navigation() {
     const { menu: { edges: [{node: menu}]}} = useStaticQuery (
@@ -22,12 +25,14 @@ function Navigation() {
         `
     )
 
+    const [navVisible, setNavVisible] = useState(false)
 
     return (
         <header>
-            <nav>
-                {console.log(menu)}
-                <ul className="navigation">
+            <nav className="container">
+                <Logo />
+                <Hamburger onClick={() => setNavVisible(!navVisible)} />
+                <ul className={`${navVisible ? 'visible' : ''} navigation`}>
                     {menu.items.map(({title, slug}, i) => (
                     <li key={i}>
                         <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>

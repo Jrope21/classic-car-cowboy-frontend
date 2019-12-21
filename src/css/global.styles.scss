@@ -49,3 +49,9 @@ main{
   width: 1px;
   word-wrap: normal !important;
 }
+
+@keyframes exitScreen {
+  100% {
+    transform: translateX(-9999px);
+  }
+}
