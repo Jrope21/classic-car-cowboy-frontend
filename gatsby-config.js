@@ -36,6 +36,7 @@ module.exports = {
         protocol: 'https',
         hostingWPCOM: false,
         useACF: true,
+        ENABLE_GATSBY_REFRESH_ENDPOINT: 1,
         searchAndReplaceContentUrls: {
           sourceUrl: `https://createboldy.net`,
           replacementUrl: ``,

@@ -13,7 +13,7 @@ function Navigation() {
                         node {
                             items{
                                 title
-                                url
+                                slug
                             }
                         }
                     }
@@ -28,8 +28,10 @@ function Navigation() {
             <nav>
                 {console.log(menu)}
                 <ul className="navigation">
-                    {menu.items.map(({title, url}) => (
-                        <li><a href={url}>{title}</a></li>
+                    {menu.items.map(({title, slug}, i) => (
+                    <li key={i}>
+                        <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>
+                    </li>
                     ))}
                 </ul>
             </nav>
