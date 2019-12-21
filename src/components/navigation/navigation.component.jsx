@@ -31,14 +31,17 @@ function Navigation() {
         <header>
             <nav className="container">
                 <Logo />
-                <Hamburger onClick={() => setNavVisible(!navVisible)} />
-                <ul className={`${navVisible ? 'visible' : ''} navigation`}>
-                    {menu.items.map(({title, slug}, i) => (
-                    <li key={i}>
-                        <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>
-                    </li>
-                    ))}
-                </ul>
+                <Hamburger active={navVisible ? 'active' : ''} onClick={() => setNavVisible(!navVisible)} />
+                <div className={`${navVisible ? 'visible' : ''} navigation`}>
+                    <span className="overlay"></span>
+                    <ul className={`navigation-list`}>
+                        {menu.items.map(({title, slug}, i) => (
+                        <li key={i}>
+                            <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
             </nav>
         </header>
     )
