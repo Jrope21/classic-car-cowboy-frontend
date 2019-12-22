@@ -5,11 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Navigation from "./navigation/navigation.component.jsx"
+import Navigation from "./navigation/navigation.component.jsx";
+import Footer from './footer/footer.component.jsx';
 import "../css/global.styles.scss";
 
 const Layout = ({ children }) => {
@@ -28,10 +29,8 @@ const Layout = ({ children }) => {
       <Navigation />
       <div>
         <main>{children}</main>
-        <footer>
-
-        </footer>
       </div>
+      <Footer />
     </>
   )
 }

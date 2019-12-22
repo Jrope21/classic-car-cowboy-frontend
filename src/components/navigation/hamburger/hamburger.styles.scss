@@ -12,6 +12,10 @@
     transition: all .45s cubic-bezier(0.85, 0.08, 0.08, 0.99);
     margin-top: -4px;
 
+    @media screen and (min-width: $breakpoint_small){
+        display: none;
+    }
+    
     &::before {
         content: '';
         display: block;

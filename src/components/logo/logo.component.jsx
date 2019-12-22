@@ -5,7 +5,7 @@ function Logo() {
     
     return (
         <>
-            <span className="logo">JR</span>
+            <span className="logo">Joshua Roper</span>
         </>
     )
 }
