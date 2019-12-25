@@ -4,16 +4,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    // justify-content: space-evenly;
-    // align-items: flex-start;
     align-items: center;
-    // border-bottom: 2.2px solid black;
     cursor: pointer;
     width: 22px;
     height: 18px;
-    // transition: all .45s cubic-bezier(0.85, 0.08, 0.08, 0.99);
     transition: all .45s ease;
-    // margin-top: -4px;
 
     @media screen and (min-width: $breakpoint_small){
         display: none;
@@ -21,7 +16,6 @@
 
     .hamburger {
         display: inline;
-        // transition: all .45s cubic-bezier(0.85, 0.08, 0.08, 0.99);
         transition: all .45s ease;
         border-bottom: 2px solid black;
         width: 17px;
@@ -33,72 +27,47 @@
        
     }
 
- &::before {
-            left: 0;
-            position: absolute;
-            // top: 0;
-            margin-top: -7px;
-            top: 50%;
-            transform: translateY(-50%);
-            content: '';
-            display: block;
-            border-bottom: 2px solid black;
-            width: 100%;
-            // transition: all .45s cubic-bezier(0.85, 0.08, 0.08, 0.99);
-            transition: all .45s ease;
-        }
+    &::before {
+        left: 0;
+        position: absolute;
+        margin-top: -7px;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        display: block;
+        border-bottom: 2px solid black;
+        width: 100%;
+        transition: all .45s ease;
+    }
 
-        &::after {
-            margin-top: 8px;
-            left: 0;
-            position: absolute;
-            // bottom: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            content: '';
-            display: block;
-            border-bottom: 2px solid black;
-            width: 100%;
-            transition: all .45s ease;
-        }
+    &::after {
+        margin-top: 8px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        display: block;
+        border-bottom: 2px solid black;
+        width: 100%;
+        transition: all .45s ease;
+    }
 
-        // &:hover {
-        //     &::after {
-        //         width: 24px;
-        //     }
-        // }
+    &.active {
 
-        &.active {
-
-            .hamburger {
-                 width: 0;
-            }
-           
-            &::after {
-                // top: 50%;
-                // bottom: 42%;
-                // transform: translateY(-50%);
-                transform: rotate(-45deg);
-                //  transform-origin: center;
-                margin: 0;
-                // @include absoluteCenterXY;
-                // width: 0;
-            }
-
-            &::before {
-                // @include absoluteCenterXY;
-                // top: 50%;
-                // top: 50%;
-                // transform-origin: center;
-                // transform: translateY(-50%);
-                margin: 0;
-                transform: rotate(45deg);
-            }
-        }
-
-    &:hover {
         .hamburger {
-            // width: 24px;
+                width: 0;
+        }
+        
+        &::after {
+            transform: rotate(-45deg);
+            margin: 0;
+        }
+
+        &::before {
+            margin: 0;
+            transform: rotate(45deg);
         }
     }
+
 }
