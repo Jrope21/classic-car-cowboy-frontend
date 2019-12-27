@@ -13,16 +13,18 @@ import Navigation from "./navigation/navigation.component.jsx";
 import Footer from './footer/footer.component.jsx';
 import "../css/global.styles.scss";
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, ...props }) => {
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+
+  console.log(children, props)
 
   return (
     <>
