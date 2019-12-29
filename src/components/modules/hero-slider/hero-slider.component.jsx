@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './hero-slider.styles.scss';
 
 import { Link, useStaticQuery, graphql } from 'gatsby';
@@ -22,8 +22,24 @@ function HeroSlider({slide, active}) {
       }`
     )
 
-      console.log(sliderImages)
+      
+      // const BASE_URL = `https://createboldly.net`;
+      // const URL_GET_ALL_PAGES = `${BASE_URL}/index.php/wp-json/wp/v2/pages?per_page=100`;
 
+      // const getPagesData = async () => {
+      //   const request = await fetch(URL_GET_ALL_PAGES);
+      //   const response = await request.json();
+      //   console.log(response)
+      //   return await response;
+      // }
+      // const test = async () => {
+      //   let data = await getPagesData();
+
+      //   console.log(data);
+      // }
+      // test();
+      // getPagesData();
+      // console.log(getPagesData)
     return (
         <div className="hero-slider">
 

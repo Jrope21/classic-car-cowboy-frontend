@@ -1,6 +1,6 @@
 @import './global.variables.scss';
 @import './reset-normalize.styles.scss';
-@import './vendor/typographic/scss/typographic.scss';
+// @import './vendor/typographic/scss/typographic.scss';
 
 body, html {
   margin: 0;
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main{
-  @include typographic;
+  // @include typographic;
   p {
     font-weight:400; font-style: normal;
   }

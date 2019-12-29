@@ -1,67 +1,29 @@
-// const path = require(`path`)
-// const slash = require(`slash`)
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   // query content for WordPress posts
-//   const result = await graphql(`
-//     query {
-//       allWordpressPage {
-//         edges {
-//           node {
-//             id
-//             slug
-//             acf
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   const data = await result;
-//   console.log('data doe', data);
-//   const pageTemplate = path.resolve(`./src/templates/standard.route.jsx`);
-//   await result.data.allWordpressPage.edges.forEach(edge => {
-//     createPage({
-//       // will be the url for the page
-//       path: edge.node.slug,
-//       // specify the component template of your choice
-//       component: slash(pageTemplate),
-//       // In the ^template's GraphQL query, 'id' will be available
-//       // as a GraphQL variable to query for this posts's data.
-//       context: {
-//         id: edge.node.id,
-//         acf: edge.node.acf
-//       },
-//     })
-//   })
-// }
-
+const fetch = require("node-fetch");
 const path = require(`path`)
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  return graphql(`
-    {
-      allWordpressPost(sort: { fields: [date] }) {
-        edges {
-          node {
-            title
-            excerpt
-            content
-            slug
-          }
-        }
-      }
-    }
-  `).then(result => {
-    result.data.allWordpressPost.edges.forEach(({ node }) => {
+const BASE_URL = `https://createboldly.net`;
+const URL_GET_ALL_PAGES = `${BASE_URL}/index.php/wp-json/wp/v2/pages?per_page=100`;
+
+const getPagesData = async () => {
+  const request = await fetch(URL_GET_ALL_PAGES);
+  const response = await request.json();
+
+  return await response;
+}
+
+exports.createPages = async ({ actions }) => {
+  const { createPage } = actions;
+  
+    const PAGES_DATA = await getPagesData();
+
+    console.log(PAGES_DATA);
+
+    PAGES_DATA.forEach(page => {
       createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/standard.route.jsx`),
+        path: `${page.slug}`,
+        component: require.resolve(`./src/templates/standard.route.jsx`),
         context: {
-          // This is the $slug variable
-          // passed to blog-post.js
-          slug: node.slug,
-        },
+          acf: page.acf
+        }
       })
     })
-  })
 }
