@@ -1,0 +1,58 @@
+/*******************************************************
+********************************************************
+**
+**  README SONNNNNzzzzz
+**
+**  1. All global sass mixins should be located here
+**
+********************************************************
+********************************************************/
+
+
+
+@mixin flexCenterXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin absoluteCenterXY {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//set values to false if you only want a breakpoint specific container
+
+@mixin container ($xs: true, $sm: true, $md: true, $lg: true) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @if ($xs){
+        padding-left: 1rem;
+        padding-right: 1rem;   
+    }
+
+    @if ($md){
+        @media screen and (min-width: breakpoint(sm)){
+            padding-right: 2.8rem;
+            padding-left: 2.8rem;
+        }
+    }
+
+    @if ($md){
+        @media (min-width: breakpoint(sm)){
+            padding-right: 4.2rem; 
+            padding-left: 4.2rem;
+        }
+    }
+
+    @if ($lg){
+        @media (min-width: breakpoint(sm)){
+            max-width: $container_max;
+            box-sizing: content-box;
+        }
+    }
+}

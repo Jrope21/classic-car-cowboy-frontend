@@ -1,4 +1,4 @@
-@import '../../css/global.styles.scss';
+@import '../../styles/global.variables.scss';
 
 header {
     height: 70px;
@@ -9,7 +9,7 @@ header {
     z-index: 5;
     background: white;
 
-    @media screen and (min-width: $breakpoint_small){
+    @media screen and (min-width: breakpoint(sm)){
         height: 90px;
     }
 }
@@ -18,7 +18,7 @@ header {
     display: block;
     height: 70px;
 
-    @media screen and (min-width: $breakpoint_small){
+    @media screen and (min-width: breakpoint(sm)){
         height: 90px;
     }
 }
@@ -42,7 +42,7 @@ nav {
         animation: .01s linear .45s 1 exitScreen forwards;
         transition: opacity .45s ease;
 
-        @media screen and (min-width: $breakpoint_small){
+        @media screen and (min-width: breakpoint(sm)){
             width: auto;
             position: static;
             opacity: 1;
@@ -53,7 +53,7 @@ nav {
             z-index: -1;
             background: #ffffffdc;
 
-            @media screen and (min-width: $breakpoint_small){
+            @media screen and (min-width: breakpoint(sm)){
                 display: none;
             }
         }
@@ -76,7 +76,7 @@ nav {
         justify-content: center;
         align-items: center;
 
-        @media screen and (min-width: $breakpoint_small){
+        @media screen and (min-width: breakpoint(sm)){
             flex-direction: row;
             width: auto;
         }
@@ -86,7 +86,7 @@ nav {
             font-size: px-to-rem(28px);
             margin: .8rem 0;
 
-            @media screen and (min-width: $breakpoint_small){
+            @media screen and (min-width: breakpoint(sm)){
                 margin-left: 20px;
                 font-size: px-to-rem(16px);
             }

@@ -1,4 +1,4 @@
-@import '../../../css/global.variables.scss';
+@import '../../../styles/global.variables.scss';
 
 .hamburger-container {
     position: relative;
@@ -10,7 +10,7 @@
     height: 18px;
     transition: all .45s ease;
 
-    @media screen and (min-width: $breakpoint_small){
+    @media screen and (min-width: breakpoint(sm)){
         display: none;
     }
 

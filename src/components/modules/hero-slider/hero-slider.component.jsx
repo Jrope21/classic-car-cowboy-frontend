@@ -5,22 +5,22 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 function HeroSlider({slide, active}) {
-    const sliderImages = useStaticQuery (graphql`query slides {
-        allWordpressPage {
-          edges {
-            node {
-              acf {
-                hero_carousel_page {
-                  hero_image_slide {
-                    source_url
-                  }
-                }
-              }
-            }
-          }
-        }
-      }`
-    )
+    // const sliderImages = useStaticQuery (graphql`query slides {
+    //     allWordpressPage {
+    //       edges {
+    //         node {
+    //           acf {
+    //             hero_carousel_page {
+    //               hero_image_slide {
+    //                 source_url
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }`
+    // )
 
       
       // const BASE_URL = `https://createboldly.net`;
