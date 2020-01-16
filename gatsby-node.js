@@ -1,3 +1,15 @@
+/*******************************************************
+********************************************************
+**
+**  REEAADDD MEEE ARGGGGGG
+**
+**  1. This file is responsible for generating the pages / routes from wordpress
+**  2. I chose to use fetch instead => works better with a modular layout (flexible content)
+**
+********************************************************
+********************************************************/
+
+
 const fetch = require("node-fetch");
 const path = require(`path`)
 const BASE_URL = `https://createboldly.net`;
