@@ -14,17 +14,6 @@ import Footer from './footer/footer.component.jsx';
 import "../styles/global.styles.scss";
 
 const Layout = ({ children, ...props }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
-  console.log(children, props)
 
   return (
     <>

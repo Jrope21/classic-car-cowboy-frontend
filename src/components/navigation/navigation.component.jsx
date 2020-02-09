@@ -25,6 +25,8 @@ function Navigation() {
         `
     )
 
+    console.log(menu);
+
     const [navVisible, setNavVisible] = useState(false)
 
     return (

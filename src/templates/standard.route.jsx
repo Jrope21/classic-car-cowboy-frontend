@@ -1,13 +1,16 @@
 import React from 'react';
 
-function Standard({ ...props }) {
+import Layout from '../components/layout.component';
+import ModuleController from '../components/modules/module-controller.component';
 
-    console.log('props', props)
+function Standard({pageContext: { page, cars } }) {
+
+    const {acf: { layout }} = page;
 
     return (
-        <div className="standard">
-
-        </div>
+        <Layout>
+            <ModuleController cars={cars} acf={layout} />
+        </Layout>
     )
 }
 

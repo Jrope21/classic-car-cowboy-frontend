@@ -1,26 +1,27 @@
 import React from 'react';
 
-import HeroSlider from './hero-slider/hero-slider.component.jsx';
+import FeaturedCarsCarousel from './featured-cars-carousel/featured-cars-carousel.component.jsx';
 
-function ModuleController({ module }) {
-    console.log(module)
+function ModuleController({ acf, cars }) {
 
-    // if(acf) {
-    //     return (
-    //         <>
-    //             {acf.map(layout => {
-    //                 if(Object.keys(layout) === 'hero') {
-    //                     return <Hero />
-    //                 } else if (Object.keys(layout) === 'hero') {
-    //                     return <HeroSlider />
-    //                 }
-    //             })}
-    //         </>
-    //     )
-    // } else {
-    //     return null;
-    // }
-    return <div></div>
+    function renderCorrectLayout(acfModule, i) {
+        const { acf_fc_layout : layout } = acfModule
+
+        switch (layout) {
+            case "featured_cars_carousel":
+                  return <FeaturedCarsCarousel cars={cars} acf={acfModule} key={i} />
+            default:
+                return null
+        }
+    }
+
+    if(acf) return (
+        <>
+            {acf.map((module, i) => (renderCorrectLayout(module, i)))}
+        </>
+    )
+    return null;
+
 }
 
 export default ModuleController;
