@@ -3,13 +3,28 @@
 .car-slide {
     display: block;
     overflow: hidden;
+    position: relative;
 
     .car-image {
         transform: scaleX(-1);
-        width: 165%;
+        width: 175%;
+        margin-top: 28px;
+    }
+
+    .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .car-name {
+        text-transform: uppercase;
+        margin-bottom: 15px;
     }
 
     .availabilty {
-        color: color(success);
+        font-size: px-to-rem(14px);
+        display: block;
+        margin-bottom: 2px;
     }
 }

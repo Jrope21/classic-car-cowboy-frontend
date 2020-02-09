@@ -42,7 +42,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
             {CarouselCars.map(car => (
               <CarSlide
                 slug={car.slug}
-                title={car.title.rendered}
+                title={car.acf.car_model}
                 availability={car.acf.car_availability}
                 img={car.acf.featured_image}
                 year={car.acf.car_year}
