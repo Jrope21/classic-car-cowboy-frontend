@@ -1,2 +1,33 @@
 @import '../../../styles/global.variables.scss';
 
+.hamburger-container {
+    position: relative;
+    color: color(body_txt);
+    width: 18px;
+    height: 12px;
+
+    .hamburger {
+        display: block;
+        width: 100%;
+        border-top: 2px solid;
+
+        &::before, &::after {
+            content: '';
+            // display: block;
+            width: 100%;
+            position: absolute;
+        }
+
+        &::before {
+            border-top: 2px solid;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            border-bottom: 2px solid;
+            bottom: 0;
+        }
+    }
+}

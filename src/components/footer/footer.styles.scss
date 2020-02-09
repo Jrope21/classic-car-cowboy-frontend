@@ -1,5 +1,6 @@
-// footer {
-//     height: 200px;
-//     background: #2b2b2b;
-//     color: whitesmoke
-// }
+@import '../../styles/global.variables.scss';
+
+footer {
+    height: 200px;
+    background: color(primary_extra_light);
+}

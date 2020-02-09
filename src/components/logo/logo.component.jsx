@@ -7,7 +7,7 @@ function Logo() {
     
     return (
         <>
-            <span className="logo"><img src={HatLogo} alt="wasssupp"/></span>
+            <img src={HatLogo} alt="wasssupp"/>
         </>
     )
 }

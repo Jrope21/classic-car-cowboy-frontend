@@ -19,8 +19,8 @@
 ********************************************************/
 
 
-$font_primary: -apple-system;
-$font_base: $font_primary, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif' !default;
+$font_primary: 'Roboto';
+$font_base: $font_primary, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif' !default;
 
 
 /*******************************************************
@@ -58,12 +58,14 @@ $container_max: 1170px; //possibly 1170px + 8.4rem??
 
 
 $colors: (
-    primary: #3B3B3B,
-    secondary: #58595b,
-    tertiary: #414042,
-    accent: #989898,
-    accentSecondary: lightgray,
-    accentTertiary: #818181,
+    primary: #887C6B,
+    primary_light: rgba(136, 124, 107, 0.3),
+    primary_extra_light: rgba(136, 124, 107, 0.15),
+    secondary: #404448, // this color was only used in the hat logo
+    accent: rgba(217, 103, 4, 0.7), //#D96704 -- original - creative was at 70% opacity
+    body_txt: #666666,
+    success: #75958C,
+    facebook: rgba(10, 85, 155, 0.9), // #0A569B -- original value - creative was at 90% opacity
 );
 
 

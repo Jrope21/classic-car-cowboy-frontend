@@ -1,5 +1,41 @@
 @import '../../styles/global.variables.scss';
 
 header {
-    
+    background: color(primary_light);
+    text-transform: uppercase;
+    box-shadow: 5px 10px 4px #00000011;
+
+    nav {
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-right, .mobile-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .logo-text {
+        color: #887C6B;
+        font-size: px-to-rem(15px);
+        line-height: 15px;
+        margin-left: 2px;
+        span {
+            display: block;
+        }
+    }
+
+    .facebook.mobile {
+        margin-right: 1rem;
+    }
+
+    a {
+        font-weight: 700;
+        font-size: px-to-rem(14px);
+    }
 }
