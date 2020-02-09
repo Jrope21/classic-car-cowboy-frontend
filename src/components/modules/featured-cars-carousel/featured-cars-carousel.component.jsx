@@ -34,17 +34,31 @@ function FeaturedCarsCarousel({ acf, cars }) {
       return selectedCarInformation
     }
 
+    console.log(CarouselCars);
+
     return (
-        <div className="hero-slider">
-          {CarouselCars.map(car => (
-            <CarSlide
-              slug={car.slug}
-              title={car.title.rendered}
-              availabilty={car.acf.car_availability}
-              img={car.acf.featured_image}
-              year={car.acf.car_year}
-            />
-          ))}
+        <div className="featured-cars-carousel container">
+          <div className="featured-cars-slider">
+            {CarouselCars.map(car => (
+              <CarSlide
+                slug={car.slug}
+                title={car.title.rendered}
+                availability={car.acf.car_availability}
+                img={car.acf.featured_image}
+                year={car.acf.car_year}
+              />
+            ))}
+          </div>
+            <div className="controls">
+              <button className="prev"></button>
+              <div className="dot-controls-container">
+                <button className="dot active"></button>
+                <button className="dot"></button>
+                <button className="dot"></button>
+                <button className="dot"></button>
+              </div>
+              <button className="next"></button>
+            </div>
         </div>
     )
 }

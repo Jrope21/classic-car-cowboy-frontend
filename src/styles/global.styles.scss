@@ -82,6 +82,21 @@ body, html {
   color: color(facebook);
 }
 
+.bold {
+  font-weight: 700;
+}
+
+.page-background {
+  background-image: url('../images/background-repeatable.png');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.app {
+  min-height: 100vh;
+}
   
 /*******************************************************
 ********************************************************

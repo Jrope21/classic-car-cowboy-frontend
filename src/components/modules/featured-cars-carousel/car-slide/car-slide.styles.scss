@@ -1,0 +1,15 @@
+@import '../../../../styles/global.variables.scss';
+
+.car-slide {
+    display: block;
+    overflow: hidden;
+
+    .car-image {
+        transform: scaleX(-1);
+        width: 165%;
+    }
+
+    .availabilty {
+        color: color(success);
+    }
+}

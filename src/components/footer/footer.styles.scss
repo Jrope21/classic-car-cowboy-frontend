@@ -1,6 +1,59 @@
 @import '../../styles/global.variables.scss';
 
 footer {
-    height: 200px;
-    background: color(primary_extra_light);
+    text-align: center;
+    color: color(body_txt);
+    position: absolute; // only temporary - may have to adjust layout? - dont want footer as absolute
+    width: 100%;
+    bottom: 0;
+
+    .top-bar {
+        p {
+            font-size: px-to-rem(12px);
+            margin: 2px 0;
+        }
+
+        .address {
+            font-size: px-to-rem(10px);
+            text-decoration: underline;
+            margin: 3px 0 8px 0;
+        }
+    }
+
+    .bottom-bar {
+        background: color(primary_extra_light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+
+        p {
+            font-weight: 300;
+            font-size: px-to-rem(14px);
+            position: relative;
+            letter-spacing: 5px;
+
+            span.last-letter {
+                letter-spacing: 0px;
+            }
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                border-bottom: 1px solid;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                left: calc(-100% - 3px);
+            }
+
+            &::after {
+                right: calc(-100% - 3px);
+            }
+
+        }
+    }
 }

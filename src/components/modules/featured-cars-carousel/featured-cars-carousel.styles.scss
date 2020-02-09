@@ -1,0 +1,80 @@
+@import '../../../styles/global.variables.scss';
+
+.featured-cars-carousel {
+    margin: 12.5vh 0;
+
+    .controls {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dot-controls-container {
+        color: color(accent);
+
+        .dot {
+            position: relative;
+            border: 1px solid;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            margin: 0 5px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -1px;
+                top: -1px;
+                border-radius: 100%;
+                width: 16px;
+                height: 16px;
+                background: color(accent);
+                opacity: 0;
+                transition: opacity .15s ease;
+            }
+
+            &.active::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    button.next, button.prev {
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: calc(50% - 10px);
+        -webkit-transition: -webkit-transform 0.2s ease-out;
+        -webkit-transition-delay: 0.2s;
+        transition: transform 0.2s ease-out 0.2s;
+
+        &::before, &::after {
+            content: " ";
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 2px;
+            background-color: white;
+            opacity: 0.7;
+            -webkit-transform-origin: 50% 100% 0;
+            transform-origin: 50% 100% 0;
+            -webkit-transition: -webkit-transform 0.15s ease-out;
+            transition: transform 0.15s ease-out;
+        }
+    }
+
+    button.next {
+
+        &::before {
+            top: -50%;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            top: -50%;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+}

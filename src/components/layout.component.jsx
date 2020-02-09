@@ -13,16 +13,17 @@ import Navigation from "./navigation/navigation.component.jsx";
 import Footer from './footer/footer.component.jsx';
 import "../styles/global.styles.scss";
 
-const Layout = ({ children, ...props }) => {
+const Layout = ({ children, globalInfo, ...props }) => {
 
   return (
-    <>
-      <Navigation />
+    <div className="app">
+      <span className="page-background"></span>
+      <Navigation globalInfo={globalInfo} />
       <div>
         <main>{children}</main>
       </div>
-      <Footer />
-    </>
+      <Footer globalInfo={globalInfo} />
+    </div>
   )
 }
 
