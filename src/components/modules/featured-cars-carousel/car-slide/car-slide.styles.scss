@@ -4,6 +4,8 @@
     display: block;
     overflow: hidden;
     position: relative;
+    max-width: 350px;
+    margin: 0 auto;
 
     .car-image {
         transform: scaleX(-1);
@@ -15,11 +17,16 @@
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
     }
 
     .car-name {
         text-transform: uppercase;
         margin-bottom: 15px;
+    }
+
+    .car-year {
+        width: 63%;
     }
 
     .availabilty {

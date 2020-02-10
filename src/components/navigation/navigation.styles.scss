@@ -1,9 +1,11 @@
 @import '../../styles/global.variables.scss';
 
 header {
+    position: relative;
     background: color(primary_light);
     text-transform: uppercase;
     box-shadow: 5px 10px 4px #00000011;
+    color: color(body_txt);
 
     nav {
         height: 56px;
@@ -17,7 +19,31 @@ header {
     }
 
     .navigation {
-        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background: rgba(168, 168, 168, 0.904);
+        
+        
+
+        li {
+            // font-weight: 800;
+            background: color(primary_light);
+            padding: 1rem 0;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+
+        a {
+            font-weight: 900;
+        }
+
+        .left, .right {
+            // background: color(primary_light);
+        }
     }
 
     .logo-text {
@@ -32,6 +58,10 @@ header {
 
     .facebook.mobile {
         margin-right: 1rem;
+    }
+
+    .facebook.desktop {
+        display: none;
     }
 
     a {

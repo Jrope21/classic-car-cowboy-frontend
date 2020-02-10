@@ -52,10 +52,9 @@ function FeaturedCarsCarousel({ acf, cars }) {
             <div className="controls">
               <button className="prev"></button>
               <div className="dot-controls-container">
-                <button className="dot active"></button>
-                <button className="dot"></button>
-                <button className="dot"></button>
-                <button className="dot"></button>
+                {allSelectedCarInformation.map((a, i) => {
+                  return <button className={`dot ${i === 0 ? 'active' : ''}`}></button>
+                })}
               </div>
               <button className="next"></button>
             </div>

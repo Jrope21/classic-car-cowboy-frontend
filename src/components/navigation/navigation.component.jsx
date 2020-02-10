@@ -26,11 +26,11 @@ function Navigation() {
     )
     
     const [navVisible, setNavVisible] = useState(false)
+    
+    const leftNavigation = menu.items.slice(0, Math.ceil(menu.items.length / 2));
+    const rightNavigation = menu.items.slice(Math.ceil(menu.items.length / 2));
 
-    const leftNavigation = menu.items.splice(0, Math.ceil(menu.items.length / 2));
-    const rightNavigation = menu.items;
-
-    function renderNavigationItems(menuItems) {
+    function renderNavigationItems(menuItems) { // this is running every rerender -- might need to readjust this
         return menuItems.map(({title, slug}, i) => (
             <li key={i}>
                 <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>
