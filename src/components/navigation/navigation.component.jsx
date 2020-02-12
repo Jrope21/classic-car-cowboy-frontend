@@ -5,6 +5,8 @@ import { Link, useStaticQuery, graphql} from 'gatsby'
 
 import Hamburger from './hamburger/hamburger.component.jsx';
 import Logo from '../logo/logo.component.jsx';
+import CloseBtn from '../helpers/close-btn/close-btn.component';
+import Arrow from '../helpers/arrow/arrow.component';
 
 function Navigation() {
     const { menu: { edges: [{node: menu}]}} = useStaticQuery (
@@ -33,7 +35,8 @@ function Navigation() {
     function renderNavigationItems(menuItems) { // this is running every rerender -- might need to readjust this
         return menuItems.map(({title, slug}, i) => (
             <li key={i}>
-                <Link to={`/${slug}`} activeClassName="active-nav">{title}</Link>
+                <Link to={`/${slug}`} activeClassName="active-nav">{title} <Arrow className="menu-arrow" direction={'right'} /></Link>
+                
             </li>
         ))
     }
@@ -59,12 +62,18 @@ function Navigation() {
                     <div className={`${navVisible ? 'visible' : ''} navigation`}>
                         <div className="left">
                             <ul className={`navigation-list`}>
+                                <li className="close">
+                                    <CloseBtn />
+                                </li>
+                                <li className="home">
+                                    <Link to={`/`} activeClassName="active-nav">Home <Arrow className="menu-arrow" direction={'right'} /></Link>
+                                </li>
                                 {renderNavigationItems(leftNavigation)}
                             </ul>
                         </div>
                         <div className="right">
                             <ul className={`navigation-list`}>
-                                <li className="">
+                                <li className="facebook desktop">
                                     <a className="facebook desktop" href="http://" target="_blank" rel="noopener noreferrer">Facebook</a>
                                 </li>
                                 {renderNavigationItems(rightNavigation)}

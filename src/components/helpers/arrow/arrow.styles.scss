@@ -1,0 +1,73 @@
+.arrow {
+    display: block;
+    position: relative;
+    height: 8px;
+    width: 8px;
+    top: calc(50% - 10px);
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    -webkit-transition-delay: 0.2s;
+    transition: transform 0.2s ease-out 0.2s;
+
+    &::before, &::after {
+        content: " ";
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 2px;
+        opacity: 0.7;
+        -webkit-transform-origin: 50% 100% 0;
+        transform-origin: 50% 100% 0;
+        -webkit-transition: -webkit-transform 0.15s ease-out;
+        transition: transform 0.15s ease-out;
+    }
+
+    &.arrow-right {
+
+        &::before {
+            top: -50%;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    
+        &::after {
+            top: calc(-50% + -1px);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+    
+        &:hover {
+            &::before {
+                transform: rotate(-30deg);
+            }
+            &::after {
+                transform: rotate(-150deg);
+            }
+        }
+    }
+
+    &.arrow-left {
+
+        &::before {
+            left: 0;
+            top: -50%;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            left: 0;
+            top: calc(-50% + -1px);
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+
+        &:hover {
+            &::before {
+                transform: rotate(30deg);
+            }
+            &::after {
+                transform: rotate(150deg);
+            }
+        }
+    }
+}

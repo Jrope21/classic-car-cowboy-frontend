@@ -1,7 +1,7 @@
 @import '../../styles/global.variables.scss';
 
 header {
-    position: relative;
+    // position: relative;
     background: color(primary_light);
     text-transform: uppercase;
     box-shadow: 5px 10px 4px #00000011;
@@ -20,30 +20,71 @@ header {
 
     .navigation {
         position: absolute;
-        left: 0;
-        top: 100%;
+        right: 0;
+        top: 0;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         z-index: 1;
-        background: rgba(168, 168, 168, 0.904);
-        
-        
+        background: color(primary_medium);
+        display: flex;
+        flex-direction: column;
 
-        li {
+        li.close, li a {
             // font-weight: 800;
-            background: color(primary_light);
-            padding: 1rem 0;
-            border-top: 1px solid gray;
-            border-bottom: 1px solid gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: color(accent_secondary);
+            padding: .75rem 12.5px;
+            margin: .25rem 12.5px;
+            border-top: 1px solid color(body_txt);
+            border-bottom: 1px solid color(body_txt);
+            transition: all .15s ease;
+        }
+
+        li a:hover, .active-nav {
+            background: color(secondary_medium);
+            color: color(body_txt);
+            border-top: 1px solid color(accent_secondary);
+            border-bottom: 1px solid color(accent_secondary);
+
+            .menu-arrow {    
+                &::before, &::after {
+                    background-color: color(body_txt);
+                }             
+            }
         }
 
         a {
             font-weight: 900;
         }
 
-        .left, .right {
-            // background: color(primary_light);
+        .menu-arrow {
+            height: 10px;
+            width: 8px;
+            margin-right: 10px;
+
+            &::before, &::after {
+                transition: all .15s ease;
+                background-color: color(accent_secondary);
+            }
+            
         }
+
+        .left, .right {
+            margin-left: auto;
+            width: 246px;
+            background: color(body_txt);
+        }
+        .right {
+           flex: 1;
+        }
+
+        li.close {
+            justify-content: flex-end;
+        }
+
+        
     }
 
     .logo-text {
