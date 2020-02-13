@@ -12,6 +12,27 @@ header {
         display: flex;
         justify-content: space-between;
     }
+    @keyframes leaveScreen {
+        100%{
+          transform: translateX(9999px)
+        }
+      }
+    .nav-overlay {
+        background: color(primary_medium);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity .3s ease;
+        animation: .001s linear .3s 1 leaveScreen forwards;
+
+        &.visible {
+            opacity: 1;
+            animation: unset;
+        }
+    }
 
     .mobile-right, .mobile-left {
         display: flex;
@@ -22,12 +43,19 @@ header {
         position: absolute;
         right: 0;
         top: 0;
-        width: 100%;
         height: 100%;
-        z-index: 1;
-        background: color(primary_medium);
+        overflow: hidden;
+        transform: translateX(100%);
+        z-index: 1; 
         display: flex;
         flex-direction: column;
+        transition: transform .5s $custom_animation;
+
+      
+
+        &.visible {
+            transform: translateX(0);
+        }
 
         li.close, li a {
             // font-weight: 800;
@@ -72,6 +100,7 @@ header {
         }
 
         .left, .right {
+            position: relative;
             margin-left: auto;
             width: 246px;
             background: color(body_txt);

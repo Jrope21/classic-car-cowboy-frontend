@@ -39,7 +39,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
     return (
         <div className="featured-cars-carousel container">
           <div className="featured-cars-slider">
-            {CarouselCars.map(car => (
+            {/* {CarouselCars.map(car => (
               <CarSlide
                 slug={car.slug}
                 title={car.acf.car_model}
@@ -47,7 +47,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
                 img={car.acf.featured_image}
                 year={car.acf.car_year}
               />
-            ))}
+            ))} */}
           </div>
             <div className="controls">
               <button className="prev"></button>

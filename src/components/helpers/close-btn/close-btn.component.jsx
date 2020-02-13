@@ -1,10 +1,10 @@
 import React from 'react';
 import './close-btn.styles.scss';
 
-function CloseBtn() {
+function CloseBtn({...otherProps}) {
 
     return (
-        <span className="close-btn"></span>
+        <span {...otherProps} className="close-btn"></span>
     )
 }
 
