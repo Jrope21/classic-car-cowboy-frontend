@@ -6,6 +6,7 @@ header {
     text-transform: uppercase;
     box-shadow: 5px 10px 4px #00000011;
     color: color(body_txt);
+    
 
     nav {
         height: 56px;
@@ -26,8 +27,9 @@ header {
         height: 100%;
         opacity: 0;
         transition: opacity .3s ease;
-        animation: .001s linear .3s 1 leaveScreen forwards;
-
+        animation: .1s linear .3s 1 leaveScreen forwards;
+        z-index: 1;
+        
         &.visible {
             opacity: 1;
             animation: unset;
@@ -46,7 +48,7 @@ header {
         height: 100%;
         overflow: hidden;
         transform: translateX(100%);
-        z-index: 1; 
+        z-index: 2; 
         display: flex;
         flex-direction: column;
         transition: transform .5s $custom_animation;
