@@ -35,11 +35,11 @@ $font_base: $font_primary, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', '
 $breakpoints: (
     xs: 0,
     sm: 640px,
-    md: 1024px,
+    md: 1124px, // 1024 was original ??
     lg: 1366px,
 );
 
-$container_max: 1170px; //possibly 1170px + 8.4rem??
+$container_max: 1170px; //possibly should change to 1170px + 8.4rem??
 
 :export { 
     breakpointSm: strip-unit(breakpoint(sm));

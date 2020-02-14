@@ -53,7 +53,7 @@ function Navigation() {
         <>
             <header>
                 <nav className="container">
-                    <div className="mobile-left">
+                    <div className="mobile-left mobile-logo">
                         <Logo />
                         <p className="logo-text">
                             <span>Classic </span>
@@ -79,6 +79,12 @@ function Navigation() {
                                 </li>
                                 {renderNavigationItems(leftNavigation)}
                             </ul>
+                        </div>
+                        <div className="desktop-logo">
+                            <Logo />
+                            <p className="logo-text">
+                                Classic Car Cowboy
+                            </p>
                         </div>
                         <div className="right">
                             <ul className={`navigation-list`}>

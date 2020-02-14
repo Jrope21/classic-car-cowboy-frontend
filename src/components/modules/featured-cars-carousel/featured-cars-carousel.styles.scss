@@ -1,8 +1,12 @@
 @import '../../../styles/global.variables.scss';
 
 .featured-cars-carousel {
-    margin: 15vh 0;
+    margin: 15vh auto;
 
+
+    @media (min-width: breakpoint(sm)) {
+        max-width: 768px;
+    }
     .controls {
         display: flex;
         justify-content: center;
@@ -16,6 +20,11 @@
         }
     }
 
+    @media (min-width: breakpoint(sm)) {
+        .slick-slide {
+            margin-top: 30px;
+        }
+    }
 
     .slick-dots {
         color: color(accent);
@@ -26,43 +35,87 @@
         justify-content: center;
         margin-top: 35px;
 
+        @media (min-width: breakpoint(sm)) {
+            position: static;
+        }
+
+        .arrow-left, .arrow-right {
+            @media (min-width: breakpoint(sm)) {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+
+                &::before, &::after {
+                    width: 3px;
+                }
+            }
+        }
+
         .arrow-left {
             margin-right: 5px;
+
+            @media (min-width: breakpoint(sm)) {
+                left: 0;
+            }
         }
 
         .arrow-right {
             margin-left: 5px;
+
+            @media (min-width: breakpoint(sm)) {
+                right: 0;
+            }
         }
 
         ul {
             display: flex;
             align-items: center;
+
+            @media (min-width: breakpoint(sm)) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                flex-direction: column;
+            }
         }
 
         li {
             position: relative;
             border: 1px solid;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 100%;
             margin: 0 5px;
+
+            @media (min-width: breakpoint(sm)) { 
+                margin: 3px 0;
+            }
 
             &::before {
                 content: '';
                 position: absolute;
-                left: -1px;
-                top: -1px;
+                left: 0;
+                top: 0;
                 border-radius: 100%;
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
                 background: color(accent);
                 opacity: 0;
                 transition: opacity .15s ease;
+
+                // @media (min-width: breakpoint(sm)) {
+                //     width: 16px;
+                //     height: 16px;
+                // }
             }
 
             button {
                 position: relative;
                 z-index: 1;
+
+                &::before {
+                    display: none;
+                }
             }
 
             &.slick-active::before {

@@ -7,6 +7,10 @@
     max-width: 350px;
     margin: 0 auto;
 
+    @media (min-width: breakpoint(sm)) {
+        max-width: 700px;
+    }
+
     .car-image {
         // transform: scaleX(-1);
         width: 100%;
@@ -17,13 +21,19 @@
             display: none;
         }
 
-        &.mobile {
-            
+        @media (min-width: breakpoint(sm)) {
+            margin-top: 40px;
+            &.desktop {
+                display: block;
+            }
+
+            &.mobile {
+                display: none;
+            }
         }
+        
     }
-
     
-
     .text {
         position: absolute;
         top: 0;

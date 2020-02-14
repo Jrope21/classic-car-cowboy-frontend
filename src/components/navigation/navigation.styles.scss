@@ -1,23 +1,28 @@
 @import '../../styles/global.variables.scss';
 
 header {
-    // position: relative;
     background: color(primary_light);
     text-transform: uppercase;
     box-shadow: 5px 10px 4px #00000011;
     color: color(body_txt);
     
+    @media (min-width: breakpoint(md)) {
+        background: transparent;
+        box-shadow: unset;
+    }
 
     nav {
         height: 56px;
         display: flex;
         justify-content: space-between;
     }
-    @keyframes leaveScreen {
-        100%{
-          transform: translateX(9999px)
+
+    @media (min-width: breakpoint(md)) {
+        .home {
+            display: none;
         }
-      }
+    }
+
     .nav-overlay {
         background: color(primary_medium);
         position: absolute;
@@ -29,6 +34,10 @@ header {
         transition: opacity .3s ease;
         animation: .1s linear .3s 1 leaveScreen forwards;
         z-index: 1;
+
+        @media (min-width: breakpoint(md)) {
+            display: none;
+        }
         
         &.visible {
             opacity: 1;
@@ -39,6 +48,10 @@ header {
     .mobile-right, .mobile-left {
         display: flex;
         align-items: center;
+
+        @media (min-width: breakpoint(md)) {
+            display: none;
+        }
     }
 
     .navigation {
@@ -53,14 +66,19 @@ header {
         flex-direction: column;
         transition: transform .5s $custom_animation;
 
-      
+        @media (min-width: breakpoint(md)) {
+            transform: unset;
+            position: static;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+        }
 
         &.visible {
             transform: translateX(0);
         }
 
         li.close, li a {
-            // font-weight: 800;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -106,13 +124,34 @@ header {
             margin-left: auto;
             width: 246px;
             background: color(body_txt);
+
+            @media (min-width: breakpoint(md)) {
+                width: 40%;
+                // width: 100%;
+                background: color(primary_light);
+            }
         }
+
         .right {
            flex: 1;
         }
 
+        .left {
+            @media (min-width: breakpoint(md)) {
+                flex: 1;
+            }
+        }
+
+        .navigation-list {
+            display: flex;
+        }
+
         li.close {
             justify-content: flex-end;
+
+            @media (min-width: breakpoint(md)) {
+                display: none;
+            }
         }
 
         
@@ -128,12 +167,26 @@ header {
         }
     }
 
+    .desktop-logo {
+        display: none;
+
+        @media (min-width: breakpoint(md)) {
+            display: block;
+            width: 200px;
+            // flex: 1;
+        }
+    }
+
     .facebook.mobile {
         margin-right: 1rem;
     }
 
     .facebook.desktop {
         display: none;
+
+        @media (min-width: breakpoint(md)) {
+            display: block;
+        }
     }
 
     a {
