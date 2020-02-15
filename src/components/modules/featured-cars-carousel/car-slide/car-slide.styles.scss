@@ -11,6 +11,14 @@
         max-width: 700px;
     }
 
+    @media (min-width: breakpoint(md)) {
+        max-width: 900px;
+    }
+
+    @media (min-width: breakpoint(lg)) {
+        max-width: 1100px;
+    }
+
     .car-image {
         // transform: scaleX(-1);
         width: 100%;

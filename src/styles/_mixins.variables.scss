@@ -35,7 +35,7 @@
         padding-right: 1rem;   
     }
 
-    @if ($md){
+    @if ($sm){
         @media screen and (min-width: breakpoint(sm)){
             padding-right: 2.8rem;
             padding-left: 2.8rem;
@@ -44,8 +44,8 @@
 
     @if ($md){
         @media (min-width: breakpoint(sm)){
-            padding-right: 4.2rem; 
-            padding-left: 4.2rem;
+            padding-right: 2.8rem; 
+            padding-left: 2.8rem;
         }
     }
 

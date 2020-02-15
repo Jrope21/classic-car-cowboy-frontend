@@ -7,6 +7,15 @@
     @media (min-width: breakpoint(sm)) {
         max-width: 768px;
     }
+
+    @media (min-width: breakpoint(md)) {
+        max-width: 924px;
+    }
+
+    @media (min-width: breakpoint(lg)) {
+        max-width: 1024px;
+    }
+
     .controls {
         display: flex;
         justify-content: center;
