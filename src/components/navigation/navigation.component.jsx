@@ -80,18 +80,19 @@ function Navigation() {
                                 {renderNavigationItems(leftNavigation)}
                             </ul>
                         </div>
-                        <div className="desktop-logo">
+                        {/* <div className="desktop-logo">
                             <Logo />
                             <p className="logo-text">
                                 Classic Car Cowboy
                             </p>
-                        </div>
+                        </div> */}
                         <div className="right">
                             <ul className={`navigation-list`}>
+                                
+                                {renderNavigationItems(rightNavigation)}
                                 <li className="facebook desktop">
                                     <a className="facebook desktop" href="http://" target="_blank" rel="noopener noreferrer">Facebook</a>
                                 </li>
-                                {renderNavigationItems(rightNavigation)}
                             </ul>
                         </div>
 

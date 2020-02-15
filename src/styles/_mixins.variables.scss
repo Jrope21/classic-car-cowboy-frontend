@@ -43,14 +43,16 @@
     }
 
     @if ($md){
-        @media (min-width: breakpoint(sm)){
+        @media (min-width: breakpoint(md)){
             padding-right: 2.8rem; 
             padding-left: 2.8rem;
         }
     }
 
     @if ($lg){
-        @media (min-width: breakpoint(sm)){
+        @media (min-width: breakpoint(lg)){
+            padding-right: 120px; 
+            padding-left: 120px;
             max-width: $container_max;
             box-sizing: content-box;
         }

@@ -7,15 +7,24 @@ header {
     color: color(body_txt);
     
     @media (min-width: breakpoint(md)) {
-        background: transparent;
-        box-shadow: unset;
-        margin-top: 50px;
+        // background: transparent;
+        // box-shadow: unset;
+        // margin-top: 50px;
     }
 
     nav {
         height: 56px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        @media (min-width: breakpoint(md)) {
+            height: 60px;
+        }
+
+        // @media (min-width: breakpoint(lg)) {
+        //     height: 70px;
+        // }
     }
 
     @media (min-width: breakpoint(md)) {
@@ -51,6 +60,12 @@ header {
         align-items: center;
 
         @media (min-width: breakpoint(md)) {
+            width: 200px;
+        }
+    }
+
+    .mobile-right {
+        @media (min-width: breakpoint(md)) {
             display: none;
         }
     }
@@ -72,7 +87,7 @@ header {
             position: static;
             width: 100%;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-end;
             overflow: visible;
             transition: unset;
         }
@@ -95,11 +110,12 @@ header {
             @media (min-width: breakpoint(md)) {
                 color: color(body_txt);
                 border: none;
+                margin: 0;
+                padding: .75rem 1rem;
             }
 
-            @media (min-width: breakpoint(lg)) {
-                margin: .25rem 20px;
-            }
+            // @media (min-width: breakpoint(lg)) {
+            // }
         }
 
         li a:hover, .active-nav {
@@ -117,6 +133,8 @@ header {
             @media (min-width: breakpoint(md)) {
                 border: none;
                 background: transparent;
+                text-decoration: underline;
+                color: color(accent);
             }
         }
 
@@ -147,9 +165,13 @@ header {
             background: color(body_txt);
 
             @media (min-width: breakpoint(md)) {
-                width: 40%;
+                // width: 40%;
+                // flex: 1;
+                width: auto;
+                margin-left: 0;
                 // width: 100%;
-                background: color(primary_extra_light);
+                // background: color(primary_extra_light);
+                background: transparent;
             }
         }
 
@@ -157,20 +179,7 @@ header {
            flex: 1;
 
            @media (min-width: breakpoint(md)) {
-
-            .navigation-list {
-                justify-content: flex-end;
-            }
-        }
-        }
-
-        .left {
-            @media (min-width: breakpoint(md)) {
-                flex: 1;
-
-                .navigation-list {
-                    justify-content: flex-start;
-                }
+                flex: none;
             }
         }
 
@@ -199,6 +208,12 @@ header {
         font-size: px-to-rem(15px);
         line-height: 15px;
         margin-left: 2px;
+
+        @media (min-width: breakpoint(lg)) {
+            font-size: px-to-rem(16px);
+            line-height: 18px;
+        }
+
         span {
             display: block;
         }
@@ -213,7 +228,6 @@ header {
             align-items: center;
             justify-content: center;
             width: 225px;
-            // flex: 1;
             position: relative;
         }
 
@@ -254,28 +268,32 @@ header {
         font-size: px-to-rem(14px);
 
         @media (min-width: breakpoint(md)) {
-            font-size: px-to-rem(16px);
             position: relative;
             overflow-x: hidden;
         }
 
-        &::before {
-            @media (min-width: breakpoint(md)) {
-                content: '';
-                width: 100%;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                transform: translateX(-100%);
-                border-bottom: 2px solid color(accent);
-                transition: transform .3s $custom_animation;
-            }
+        @media (min-width: breakpoint(lg)) {
+            font-size: px-to-rem(16px);
         }
 
+        // &::before {
+        //     @media (min-width: breakpoint(md)) {
+        //         content: '';
+        //         width: 100%;
+        //         position: absolute;
+        //         left: 0;
+        //         bottom: 0;
+        //         transform: translateX(-100%);
+        //         border-bottom: 2px solid color(accent);
+        //         transition: transform .3s $custom_animation;
+        //     }
+        // }
+
         &:hover {
-            &::before {
-                transform: translateX(0);
-            }
+            color: color(accent);
+            // &::before {
+            //     transform: translateX(0);
+            // }
         }
 
 

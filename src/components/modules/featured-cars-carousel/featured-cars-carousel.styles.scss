@@ -1,11 +1,12 @@
 @import '../../../styles/global.variables.scss';
 
 .featured-cars-carousel {
-    margin: 15vh auto;
+    margin: 60px auto 60px auto;
 
 
     @media (min-width: breakpoint(sm)) {
         max-width: 768px;
+        margin: 60px auto 120px auto;
     }
 
     @media (min-width: breakpoint(md)) {
