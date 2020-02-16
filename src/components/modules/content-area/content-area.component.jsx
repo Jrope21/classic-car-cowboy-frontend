@@ -6,23 +6,23 @@ function ContentArea({acf}) {
     const { content_area_rows } = acf;
 
     return (
-        <div className="content-area module">
-            {content_area_rows.map(({column_one, column_two, column_three, column_four}) => (
-                <div className="content-area-row inner-module">  
+        <div className="content-area module has-inner-modules container">
+            {content_area_rows.map(({column_one, column_two, column_three, column_four}, i) => (
+                <div className={`content-area-row`}>  
                     {column_one && 
-                        <div dangerouslySetInnerHTML={{ __html: column_one.content}} className="column_one"></div>
+                        <div dangerouslySetInnerHTML={{ __html: column_one.content}} className="column-one  the-content inner-module"></div>
                     }
                     
                     {column_two && 
-                        <div dangerouslySetInnerHTML={{ __html: column_two.content}} className="column_one"></div>
+                        <div dangerouslySetInnerHTML={{ __html: column_two.content}} className="column-two the-content inner-module"></div>
                     }
 
                     {column_three && 
-                        <div dangerouslySetInnerHTML={{ __html: column_three.content}} className="column_one"></div>
+                        <div dangerouslySetInnerHTML={{ __html: column_three.content}} className="column-three the-content inner-module"></div>
                     }
 
                     {column_four && 
-                        <div dangerouslySetInnerHTML={{ __html: column_four.content}} className="column_one"></div>
+                        <div dangerouslySetInnerHTML={{ __html: column_four.content}} className="column-four the-content inner-module"></div>
                     }
                 </div>
             ))}

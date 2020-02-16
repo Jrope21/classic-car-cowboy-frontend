@@ -8,8 +8,6 @@ function ModuleController({ acf, cars }) {
     function renderCorrectLayout(acfModule, i) {
         const { acf_fc_layout : layout } = acfModule
 
-        console.log(layout);
-
         switch (layout) {
             case "featured_cars_carousel":
                   return <FeaturedCarsCarousel cars={cars} acf={acfModule} key={i} />
