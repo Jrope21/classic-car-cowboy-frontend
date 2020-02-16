@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './featured-cars-carousel.styles.scss';
 
-import { Link, useStaticQuery, graphql } from 'gatsby';
 import Slider from "react-slick";
 
 import CarSlide from './car-slide/car-slide.component';
@@ -13,7 +12,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
     const allCarSlugs = storePostNameWithIndex();
     const allSelectedCarInformation = buildSelectedCarInformation();
 
-    const [CarouselCars, setCarouselCars] = useState(allSelectedCarInformation);
+    const [CarouselCars] = useState(allSelectedCarInformation);
     
     function storePostNameWithIndex() {
       let allSlugsWithIndex = {}
@@ -43,7 +42,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
       arrows: false,
       infinite: true,
       appendDots: dots => (
-        <div class="controls">
+        <div className="controls">
           <Arrow onClick={() => slider.slickPrev()} direction="left"/>
           <ul> {dots} </ul>
           <Arrow onClick={() => slider.slickNext()} direction="right"/>
@@ -59,8 +58,9 @@ function FeaturedCarsCarousel({ acf, cars }) {
         <div className="featured-cars-carousel container">
           <div className="featured-cars-slider">
             <Slider {...carouselSettings} ref={c => (c = slider = c)}>
-              {CarouselCars.map(car => (
+              {CarouselCars.map((car, i) => (
                 <CarSlide
+                  key={i}
                   slug={car.slug}
                   title={car.acf.car_model}
                   availability={car.acf.car_availability}
