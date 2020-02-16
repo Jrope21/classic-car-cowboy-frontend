@@ -6,36 +6,16 @@ import Slider from "react-slick";
 import CarSlide from './car-slide/car-slide.component';
 import Arrow from '../../helpers/arrow/arrow.component';
 
+import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
+
 function FeaturedCarsCarousel({ acf, cars }) {
 
     const { car_selection } = acf;
-    const allCarSlugs = storePostNameWithIndex();
-    const allSelectedCarInformation = buildSelectedCarInformation();
+    const allSelectedCarInformation = getSelectedCarInfoFromPostObj({selectedCars: car_selection, allCars: cars});
 
     const [CarouselCars] = useState(allSelectedCarInformation);
     
-    function storePostNameWithIndex() {
-      let allSlugsWithIndex = {}
-
-      cars.forEach(({ slug }, i) => {
-        allSlugsWithIndex[slug] = i;
-      })
-
-      return allSlugsWithIndex;
-    }
-
     let slider = useRef();
-
-    function buildSelectedCarInformation() {    
-      const selectedCarInformation = [];
-      
-      car_selection.forEach(({ post_name }) => {
-          const currentCarIndex = allCarSlugs[post_name];
-          selectedCarInformation.push(cars[currentCarIndex]);
-      })
-
-      return selectedCarInformation
-    }
 
     const carouselSettings = {
       dots: true,
@@ -52,7 +32,6 @@ function FeaturedCarsCarousel({ acf, cars }) {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-    console.log(CarouselCars);
 
     return (
         <div className="featured-cars-carousel container">
@@ -70,15 +49,6 @@ function FeaturedCarsCarousel({ acf, cars }) {
               ))}
             </Slider>
           </div>
-            {/* <div className="controls">
-              <button onClick={() => slider.slickNext()} id="slick-arr" className="prev personal buttnnnnnn arrow arrow-left"></button>
-              <div className="dot-controls-container">
-                {allSelectedCarInformation.map((a, i) => {
-                  return <button className={`dot ${i === 0 ? 'active' : ''}`}></button>
-                })}
-              </div>
-              <button to="prev" className="next"></button>
-            </div> */}
         </div>
     )
 }

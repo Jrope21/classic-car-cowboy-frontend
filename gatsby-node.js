@@ -13,9 +13,16 @@
 const fetch = require("node-fetch");
 const path = require(`path`)
 const BASE_URL = `https://createboldly.net`;
+
+const URL_GET_NAVIGATION_ITEMS = `${BASE_URL}/wp-json/menus/v1/menus/main-menu`;
 const URL_GET_ALL_PAGES = `${BASE_URL}/index.php/wp-json/wp/v2/pages?per_page=100`;
 const URL_GET_ALL_CARS = `${BASE_URL}/index.php/wp-json/wp/v2/cars?per_page=100`;
 const URL_GET_GLOBAL_INFO = `${BASE_URL}/wp-json/acf/v3/options/global_info`;
+
+const getPagesData = async () => await getResponse(URL_GET_ALL_PAGES);
+const getCarData = async () => await getResponse(URL_GET_ALL_CARS);
+const getGlobalInfo = async () => await getResponse(URL_GET_GLOBAL_INFO);
+const getNavigationItems = async () => await getResponse(URL_GET_NAVIGATION_ITEMS);
 
 const getResponse = async (requestURL) => {
   const request = await fetch(requestURL);
@@ -24,32 +31,22 @@ const getResponse = async (requestURL) => {
   return await response;
 }
 
-const getPagesData = async () => {
-  return await getResponse(URL_GET_ALL_PAGES);
-}
-
-const getCarData = async () => {
-  return await getResponse(URL_GET_ALL_CARS);
-}
-
-const getGlobalInfo = async () => {
-  return await getResponse(URL_GET_GLOBAL_INFO);
-}
-
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
 
-    const WordpressData = await Promise.all([getCarData(), getPagesData(), getGlobalInfo()]);
+    const WordpressData = await Promise.all([getCarData(), getPagesData(), getGlobalInfo(), getNavigationItems()]);
 
     const CARS_DATA = WordpressData[0];
     const PAGES_DATA = WordpressData[1];
     const GLOBAL_DATA = WordpressData[2].acf.website_options;
+    const NAVIGATION_ITEMS = WordpressData[3];
     
     PAGES_DATA.forEach(page => {   
         createPage({
           path: `${page.slug === 'home' ? '/' : page.slug}`,
           component: require.resolve(`./src/templates/standard.route.jsx`),
           context: {
+            navigation: NAVIGATION_ITEMS,
             page: page,
             cars: CARS_DATA,
             globalInfo: GLOBAL_DATA
@@ -57,11 +54,3 @@ exports.createPages = async ({ actions }) => {
         }) 
     })
 }
-
-
-
-
-
-
-
-

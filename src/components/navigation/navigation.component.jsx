@@ -8,29 +8,12 @@ import Logo from '../logo/logo.component.jsx';
 import CloseBtn from '../helpers/close-btn/close-btn.component';
 import Arrow from '../helpers/arrow/arrow.component';
 
-function Navigation() {
-    const { menu: { edges: [{node: menu}]}} = useStaticQuery (
-        graphql`
-            query menu {
-                menu: allWordpressMenusMenusItems
-                    {
-                    edges {
-                        node {
-                            items{
-                                title
-                                slug
-                            }
-                        }
-                    }
-                }
-            }
-        `
-    )
-    
+function Navigation({ navigation }) {
+
     const [navVisible, setNavVisible] = useState(false)
     
-    const leftNavigation = menu.items.slice(0, Math.ceil(menu.items.length / 2));
-    const rightNavigation = menu.items.slice(Math.ceil(menu.items.length / 2));
+    const leftNavigation = navigation.items.slice(0, Math.ceil(navigation.items.length / 2));
+    const rightNavigation = navigation.items.slice(Math.ceil(navigation.items.length / 2));
 
     function renderNavigationItems(menuItems) { // this is running every rerender -- might need to readjust this
         return menuItems.map(({title, slug}, i) => (
@@ -80,12 +63,6 @@ function Navigation() {
                                 {renderNavigationItems(leftNavigation)}
                             </ul>
                         </div>
-                        {/* <div className="desktop-logo">
-                            <Logo />
-                            <p className="logo-text">
-                                Classic Car Cowboy
-                            </p>
-                        </div> */}
                         <div className="right">
                             <ul className={`navigation-list`}>
                                 

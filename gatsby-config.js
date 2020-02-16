@@ -28,21 +28,20 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        excludedRoutes: [`/wp/v2/users/**`, '/wp/v2/settings*'],
-        baseUrl: 'createboldly.net',
-        protocol: 'https',
-        hostingWPCOM: false,
-        useACF: true,
-        ENABLE_GATSBY_REFRESH_ENDPOINT: 1,
-        searchAndReplaceContentUrls: {
-          sourceUrl: `https://createboldy.net`,
-          replacementUrl: ``,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-wordpress`,
+    //   options: {
+    //     excludedRoutes: [`/wp/v2/users/**`, '/wp/v2/settings*', '/acf/**'],
+    //     baseUrl: 'createboldly.net',
+    //     protocol: 'https',
+    //     hostingWPCOM: false,
+    //     useACF: true,
+    //     searchAndReplaceContentUrls: {
+    //       sourceUrl: `https://createboldy.net`,
+    //       replacementUrl: ``,
+    //     },
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -70,29 +70,3 @@ div.content-area-row {
         color: color(accent);
     }
 }
-
-.module {
-    padding-top: 90px;
-    padding-bottom: 90px;
-
-    &.has-inner-modules {
-        padding-bottom: 45px;
-
-        @media (min-width: breakpoint(md)) {
-            padding-bottom: 60px;
-        }
-    }
-
-    @media (min-width: breakpoint(md)) {
-        padding-top: 120px;
-        padding-bottom: 120px;
-    }
-}
-
-.inner-module {
-    margin-bottom: 45px;
-
-    @media (min-width: breakpoint(md)) {
-        margin-bottom: 60px;
-    }
-}
