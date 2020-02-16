@@ -1,1 +1,17 @@
 @import '../../../styles/global.variables.scss';
+
+.featured-cars-listing {
+
+
+    
+}
+
+.car-listing {
+    .car-thumb {
+        position: relative;
+        
+        img {
+            max-width: 100%;
+        }
+    }
+}
