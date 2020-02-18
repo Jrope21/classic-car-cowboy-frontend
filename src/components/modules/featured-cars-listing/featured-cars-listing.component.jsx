@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
 
 function FeaturedCarsListing({acf, cars}) {
-    
+
     const { car_selection } = acf;
     const allSelectedCarInformation = getSelectedCarInfoFromPostObj({selectedCars: car_selection, allCars: cars});
 
@@ -16,7 +16,7 @@ function FeaturedCarsListing({acf, cars}) {
                 <div className="car-listing">
                     <div className="car-thumb">
                     <span className={`
-                        availabilty
+                        availability
                         ${car_availability ? 'success' : 'error'}`}
                     >
                         {car_availability ? 'Available' : 'Not Available'}

@@ -9,7 +9,7 @@ function CarSlide({ slug, img, title, availability, year }) {
         <Link to={slug} className="car-slide">
             <div className="text">
                 <span className={`
-                    availabilty
+                    availability
                     ${availability ? 'success' : 'error'}`}
                 >
                     {availability ? 'Available' : 'Not Available'}
