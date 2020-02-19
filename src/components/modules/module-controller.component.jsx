@@ -5,7 +5,6 @@ import ContentArea from './content-area/content-area.component.jsx';
 import FeaturedCarsListing from './featured-cars-listing/featured-cars-listing.component.jsx';
 
 function ModuleController({ acf, cars }) {
-    // console.log('module controller acf', acf);
 
     function renderCorrectLayout(acfModule, i) {
         const { acf_fc_layout : layout } = acfModule

@@ -9,11 +9,9 @@ div.content-area-row {
     flex-wrap: wrap;
 
     > div {
-        // width: 100%;
 
         @media (min-width: breakpoint(sm)) {
             flex: 1;
-            // width: auto;
         }
        
     }
@@ -66,7 +64,6 @@ div.content-area-row {
     }
 
     &:hover {
-        // background: color(success);
         color: color(accent);
     }
 }
