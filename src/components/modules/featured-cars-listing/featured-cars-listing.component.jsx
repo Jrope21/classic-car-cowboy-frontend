@@ -11,9 +11,9 @@ function FeaturedCarsListing({acf, cars}) {
     const allSelectedCarInformation = getSelectedCarInfoFromPostObj({selectedCars: car_selection, allCars: cars});
 
     return (
-        <div className="module featured-cars-listing container">
+        <section className="module has-inner-modules featured-cars-listing container">
             {allSelectedCarInformation.map(({slug, acf: {car_model, car_year, car_availability, car_images}}, i) => (
-                <div className="car-listing">
+                <div className="car-listing inner-module">
                     <div className="car-thumb">
                     <span className={`
                         availability
@@ -25,11 +25,11 @@ function FeaturedCarsListing({acf, cars}) {
                     </div>
                     <div className="car-text">
                         <p className="model">{`${car_year}`}</p>
-                        <h4 className="car-name">{car_model}</h4>
+                        <h3 className="car-name">{car_model}</h3>
                     </div>
                 </div>
             ))}
-        </div>
+        </section>
     )
 }
 
