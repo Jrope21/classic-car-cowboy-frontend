@@ -1,3 +1,15 @@
+/*******************************************************
+********************************************************
+**
+**  REEAADDD MEEE ARGGGGGG
+**
+**  1. This file gets imported into Gatsby Node as well as other places on the front end
+**  2. Place any globals here (primarily for api endpoints etc...)
+**
+********************************************************
+********************************************************/
+
+
 const BASE_URL = `https://createboldly.net`;
 
 const ENDPOINTS = {
