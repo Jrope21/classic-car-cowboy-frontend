@@ -1,11 +1,18 @@
 import React from 'react';
 
-function FullWidthTextWithButton({ content, button }) {
+import { Link } from 'gatsby';
+import CCCButtonLink from '../../../helpers/ccc-button-link/ccc-button-link.component';
+
+function FullWidthTextWithButton({ acf }) {
+
+    const { content, button } = acf;
 
     return (
         <section className="full-width-text-with-button module">
-            <h1>{content}</h1>
-
+            <div className="container">
+                <div dangerouslySetInnerHTML={{ __html: content }} />
+                <CCCButtonLink url={button.url}>{button.title}</CCCButtonLink>
+            </div>
         </section>
     )
 }

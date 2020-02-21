@@ -20,3 +20,11 @@ function storeCarPostNameWithIndex(cars) {
 
   return allSlugsWithIndex;
 }
+
+export function convertLink(url) {
+  url = url.replace('https://createboldly.net', '');
+
+  if(url[url.length - 1] !== '/') url += '/';
+
+  return url;
+}

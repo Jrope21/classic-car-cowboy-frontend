@@ -25,11 +25,14 @@ function ModuleController({ acf, cars }) {
     }
 
     function renderFeaturedContentLayouts(acfModule, key) {
-        const { acf_fc_layout: { display } } = acfModule
-
+        const { display } = acfModule
+        // console.log('test', acfModule)
         switch (display) {
             case "full_width_text_with_button":
                 return <FullWidthTextWithButton acf={acfModule} key={key} />
+            default:
+                console.log('fail', display)
+                return null
         }
     }
 
