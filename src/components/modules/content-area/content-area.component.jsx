@@ -6,7 +6,7 @@ function ContentArea({acf}) {
     const { content_area_rows } = acf;
 
     return (
-        <div className="content-area module has-inner-modules container">
+        <div className="content-area module has-inner-modules container light-bg">
             {content_area_rows.map(({column_one, column_two, column_three, column_four}, i) => (
                 <div className={`content-area-row `} key={i}>  
                     { column_one && 

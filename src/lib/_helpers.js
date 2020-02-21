@@ -1,3 +1,5 @@
+const API = require('./_config.js');
+
 export function getSelectedCarInfoFromPostObj({selectedCars, allCars}) {
     const allCarSlugsWithIndex = storeCarPostNameWithIndex(allCars);
 
@@ -22,9 +24,9 @@ function storeCarPostNameWithIndex(cars) {
 }
 
 export function convertLink(url) {
-  url = url.replace('https://createboldly.net', '');
+  url = url.replace(API.BASE_URL, '');
 
-  if(url[url.length - 1] !== '/') url += '/';
+  if(url[url.length - 1] !== '/') url += '/'; // force trailing slash
 
   return url;
 }

@@ -11,18 +11,13 @@
 
 
 const fetch = require("node-fetch");
-const path = require(`path`)
-const BASE_URL = `https://createboldly.net`;
+const path = require(`path`);
+const API = require('./src/lib/_config.js');
 
-const URL_GET_NAVIGATION_ITEMS = `${BASE_URL}/wp-json/menus/v1/menus/main-menu`;
-const URL_GET_ALL_PAGES = `${BASE_URL}/index.php/wp-json/wp/v2/pages?per_page=100`;
-const URL_GET_ALL_CARS = `${BASE_URL}/index.php/wp-json/wp/v2/cars?per_page=100`;
-const URL_GET_GLOBAL_INFO = `${BASE_URL}/wp-json/acf/v3/options/global_info`;
-
-const getPagesData = async () => await getResponse(URL_GET_ALL_PAGES);
-const getCarData = async () => await getResponse(URL_GET_ALL_CARS);
-const getGlobalInfo = async () => await getResponse(URL_GET_GLOBAL_INFO);
-const getNavigationItems = async () => await getResponse(URL_GET_NAVIGATION_ITEMS);
+const getPagesData = async () => await getResponse(API.ENDPOINTS.ALLPAGES);
+const getCarData = async () => await getResponse(API.ENDPOINTS.ALLCARS);
+const getGlobalInfo = async () => await getResponse(API.ENDPOINTS.GLOBALINFO);
+const getNavigationItems = async () => await getResponse(API.ENDPOINTS.NAVIGATION);
 
 const getResponse = async (requestURL) => {
   const request = await fetch(requestURL);

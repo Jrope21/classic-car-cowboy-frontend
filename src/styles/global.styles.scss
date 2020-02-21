@@ -58,8 +58,6 @@ body {
   }
 }
 
-
-
 .page-background {
   background-image: url('../images/background-repeatable.png');
   position: fixed;
@@ -71,11 +69,11 @@ body {
 }
 
 .module {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   &.has-inner-modules {
-      padding-bottom: 45px;
+      padding-bottom: 15px;
 
       @media (min-width: breakpoint(md)) {
           padding-bottom: 60px;
@@ -96,6 +94,10 @@ body {
   }
 }
 
+button:focus {
+  outline: 0;
+}
+
   
 /*******************************************************
 ********************************************************
@@ -107,10 +109,16 @@ body {
 
 
 main {
-  // @include typographic;
+  // 
 
     h1, h2, h3, h4, h5, h6 {
       color: color(body_txt)
+    }
+
+    .light-bg {
+      h1, h2, h3, h4, h5, h6 {
+        color: color(secondary);
+      }
     }
 
     h3 {
@@ -124,7 +132,7 @@ main {
     p {
       font-weight:400; 
       font-style: normal;
-      color: color(body_txt)
+      color: color(body_txt);
     }
 
     strong {
@@ -132,10 +140,47 @@ main {
     }
 }
 
+.the-content { // default styling for wordpress WYSIWIG
+  // @include typographic;
+  h1 {
+      font-size: px-to-rem(32px);
+      color: color(secondary);
+      font-weight: 500;
+      line-height: 40px;
 
-button:focus {
-    outline: 0;
+      @media (min-width: breakpoint(md)) {
+          font-size: px-to-rem(48px);
+      }
+
+      em {
+          font-weight: 300;
+      }
+  }
+
+  h3 {
+      font-size: px-to-rem(20px);
+      color: color(secondary);
+      font-weight: bold;
+      margin-bottom: 20px;
+
+      @media (min-width: breakpoint(md)) {
+          font-size: px-to-rem(24px);
+      }
+  }
+
+  p {
+      margin-bottom: 20px;
+      line-height: 26px;
+      font-size: px-ot-rem(16px);
+
+      @media (min-width: breakpoint(md)) {
+        line-height: 30px;
+        font-size: px-ot-rem(18px);
+      }
+  }
 }
+
+
 
 
 /*******************************************************
@@ -184,6 +229,31 @@ button:focus {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.ccc-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 35px;
+  border-radius: 2px;
+  font-size: px-to-rem(13px);
+  color: color(success);
+  border: 1px solid;
+  transition: .2s ease;
+
+  @media (min-width: breakpoint(md)) {
+      font-size: px-to-rem(15px);
+  }
+
+  &:hover {
+      color: color(accent);
+  }
+}
+
+.light-bg {
+    background: rgba(255, 255, 255, 0.75);
 }
 
 

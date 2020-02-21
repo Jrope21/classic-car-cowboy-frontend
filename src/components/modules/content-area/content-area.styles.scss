@@ -1,9 +1,5 @@
 @import '../../../styles/global.variables.scss';
 
-div.content-area {
-    background: rgba(255, 255, 255, 0.75);
-}
-
 div.content-area-row {
     display: flex;
     flex-wrap: wrap;
@@ -14,56 +10,5 @@ div.content-area-row {
             flex: 1;
         }
        
-    }
-}
-
-.the-content {
-
-
-    h1 {
-        font-size: px-to-rem(32px);
-        color: color(secondary);
-        font-weight: 500;
-
-        @media (min-width: breakpoint(md)) {
-            font-size: px-to-rem(48px);
-        }
-
-        em {
-            font-weight: 300;
-        }
-    }
-
-    h3 {
-        font-size: px-to-rem(20px);
-        color: color(secondary);
-        font-weight: bold;
-        margin-bottom: 20px;
-
-        @media (min-width: breakpoint(md)) {
-            font-size: px-to-rem(24px);
-        }
-    }
-
-    p {
-        margin-bottom: 20px;
-    }
-}
-
-.ccc-button {
-    width: 110px;
-    height: 35px;
-    border-radius: 2px;
-    font-size: px-to-rem(13px);
-    color: color(success);
-    border: 1px solid;
-    transition: .2s ease;
-
-    @media (min-width: breakpoint(md)) {
-        font-size: px-to-rem(15px);
-    }
-
-    &:hover {
-        color: color(accent);
     }
 }
