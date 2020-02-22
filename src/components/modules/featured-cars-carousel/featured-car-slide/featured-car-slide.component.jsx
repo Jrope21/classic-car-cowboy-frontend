@@ -1,12 +1,12 @@
 import React from 'react';
-import './car-slide.styles.scss';
+import './featured-car-slide.styles.scss';
 
 import { Link } from 'gatsby';
 
-function CarSlide({ slug, img, title, availability, year }) {
+function FeaturedCarSlide({ slug, img, title, availability, year }) {
 
     return (
-        <Link to={slug} className="car-slide">
+        <Link to={slug} className="featured-car-slide">
             <div className="text">
                 <span className={`
                     availability
@@ -22,4 +22,4 @@ function CarSlide({ slug, img, title, availability, year }) {
     )
 }
 
-export default CarSlide;
+export default FeaturedCarSlide;

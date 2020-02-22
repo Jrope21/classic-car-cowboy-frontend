@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
+import './cars-carousel.styles.scss';
 
 import Slider from "react-slick";
 
-import CarSlide from './car-slide/car-slide.component';
 import Arrow from '../../helpers/arrow/arrow.component';
 
-import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
+// import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
 
 function CarsCarousel({ acf, cars }) {
 
-    CarouselCars = cars.slice(0, 5);
-
+    const CarouselCars = cars.slice(0, 10);
+    console.log(CarouselCars)
     let slider = useRef();
 
     const carouselSettings = {
@@ -32,18 +32,13 @@ function CarsCarousel({ acf, cars }) {
 
     
     return (
-        <div className="cars-carousel">
+        <div className="cars-carousel container module">
             <div className="cars-slider">
                 <Slider {...carouselSettings} ref={c => (c = slider = c)}>
-                {CarouselCars.map((car, i) => (
-                    <CarSlide
-                    key={i}
-                    slug={car.slug}
-                    title={car.acf.car_model}
-                    availability={car.acf.car_availability}
-                    img={car.acf.featured_image}
-                    year={car.acf.car_year}
-                    />
+                {CarouselCars.map(({ acf: { car_images }}, i) => (
+                  <div key={i} className="slide-wrapper">
+                      <img className="car-image" src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} />
+                  </div>
                 ))}
                 </Slider>
             </div>

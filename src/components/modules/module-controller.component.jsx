@@ -4,13 +4,16 @@ import FeaturedCarsCarousel from './featured-cars-carousel/featured-cars-carouse
 import ContentArea from './content-area/content-area.component.jsx';
 import FeaturedCarsListing from './featured-cars-listing/featured-cars-listing.component.jsx';
 import FullWidthTextWithButton from './featured-content/full-width-text-with-button/full-width-text-with-button.component.jsx';
+import CarsCarousel from './cars-carousel/cars-carousel.component.jsx';
 
 function ModuleController({ acf, cars }) {
-// console.log(acf)
+    console.log(acf)
     function renderCorrectLayout(acfModule, key) {
         const { acf_fc_layout : layout } = acfModule
 
         switch (layout) {
+            case "cars_carousel":
+                return <CarsCarousel acf={acfModule} cars={cars} />
             case "featured_content":
                 return renderFeaturedContentLayouts(acfModule, key)
             case "featured_cars_listing": 
@@ -31,7 +34,6 @@ function ModuleController({ acf, cars }) {
             case "full_width_text_with_button":
                 return <FullWidthTextWithButton acf={acfModule} key={key} />
             default:
-                console.log('fail', display)
                 return null
         }
     }

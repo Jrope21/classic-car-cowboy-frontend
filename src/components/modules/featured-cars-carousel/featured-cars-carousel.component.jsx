@@ -3,7 +3,7 @@ import './featured-cars-carousel.styles.scss';
 
 import Slider from "react-slick";
 
-import CarSlide from './car-slide/car-slide.component';
+import FeaturedCarSlide from './featured-car-slide/featured-car-slide.component';
 import Arrow from '../../helpers/arrow/arrow.component';
 
 import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
@@ -38,7 +38,7 @@ function FeaturedCarsCarousel({ acf, cars }) {
           <div className="featured-cars-slider">
             <Slider {...carouselSettings} ref={c => (c = slider = c)}>
               {CarouselCars.map((car, i) => (
-                <CarSlide
+                <FeaturedCarSlide
                   key={i}
                   slug={car.slug}
                   title={car.acf.car_model}
