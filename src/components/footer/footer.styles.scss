@@ -1,7 +1,6 @@
 @import '../../styles/global.variables.scss';
 
 footer {
-    // text-align: center;
     background: color(primary_extra_light);
     color: color(body_txt);
     width: 100%;
@@ -24,11 +23,19 @@ footer {
 
         .footer-logo {
             width: 100px;
+
+            // @media (min-width: breakpoint(sm)) {
+            //     width: 80px;
+            // }
         }
     }
 
     .logo-copyright-container {
         margin-top: 30px;
+
+        @media (min-width: breakpoint(sm)) {
+            margin-top: 1rem;
+        }
     }
 
     p.copyright {
@@ -51,8 +58,19 @@ footer {
         }
     }
 
+    .menu-logo-container {
+        @media (min-width: breakpoint(sm)) {
+            display: flex;
+        }
+    }
+
     .footer-menu {
         columns: 2;
+
+        @media (min-width: breakpoint(sm)) {
+            columns: 3;
+            width: 70%;
+        }
     }
 
     li {

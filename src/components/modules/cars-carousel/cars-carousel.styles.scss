@@ -4,7 +4,9 @@
     
     .cars-slider {
         padding: 0 1.5rem;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
+        max-width: 750px;
     }
 
     .arrow-right, .arrow-left {
@@ -25,6 +27,7 @@
 
     .slider-top-bar {
         display: flex;
+        align-items: center;
         margin-bottom: .75rem;
     }
 

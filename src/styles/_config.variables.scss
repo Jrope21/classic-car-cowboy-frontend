@@ -35,8 +35,8 @@ $font_base: $font_primary, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', '
 $breakpoints: (
     xs: 0,
     sm: 640px,
-    md: 1124px, // 1024 was original ??
-    lg: 1366px,
+    md: 980px, 
+    lg: 1200px,
 );
 
 $container_max: 1300px; //possibly should change to 1170px + 8.4rem??
@@ -68,6 +68,7 @@ $colors: (
     accent_secondary: #E5E5E5,
     body_txt: #666666,
     success: #75958C,
+    error: rgb(149, 117, 117),
     facebook: rgba(10, 85, 155, 0.9), // #0A569B -- original value - creative was at 90% opacity
 );
 

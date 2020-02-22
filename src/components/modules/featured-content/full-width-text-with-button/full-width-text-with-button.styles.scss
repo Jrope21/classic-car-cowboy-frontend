@@ -18,6 +18,8 @@
         @media (min-width: breakpoint(sm)) {
             width: 70%;
             margin: 0;
+            line-height: 42px;
+            // font-size: px-to-rem(36px);
         }
         
         @media (min-width: breakpoint(md)) {

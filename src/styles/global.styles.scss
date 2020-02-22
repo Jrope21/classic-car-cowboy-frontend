@@ -194,6 +194,10 @@ main {
   color: color(success);
 }
 
+.error {
+  color: color(error);
+}
+
 .grid-x {
   display: flex;
   flex-wrap: wrap;
@@ -243,6 +247,8 @@ main {
 
   @media (min-width: breakpoint(md)) {
       font-size: px-to-rem(15px);
+      width: 120px;
+      height: 40px;
   }
 
   &:hover {

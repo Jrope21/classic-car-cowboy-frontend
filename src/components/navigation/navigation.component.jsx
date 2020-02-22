@@ -35,13 +35,13 @@ function Navigation({ navigation }) {
         <>
             <header>
                 <nav className="container">
-                    <div className="mobile-left mobile-logo">
+                    <Link to="/" className="mobile-left mobile-logo">
                         <Logo />
                         <p className="logo-text">
                             <span>Classic </span>
                             Car Cowboy
                         </p>
-                    </div>
+                    </Link>
                     <div className="mobile-right">
                         <a className="facebook mobile" href="http://" target="_blank" rel="noopener noreferrer">
                             Facebook
