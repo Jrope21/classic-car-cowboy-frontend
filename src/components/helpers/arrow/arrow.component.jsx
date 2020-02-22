@@ -1,13 +1,14 @@
 import React from 'react';
 import './arrow.styles.scss';
 
-function Arrow({direction, className, ...otherProps}) {
+function Arrow({direction, className, bold = false, ...otherProps}) {
 
     return (
         <span className={`arrow
-           ${direction === 'left' ? 'arrow-left' : ''} 
-           ${direction === 'right' ? 'arrow-right' : ''} 
-           ${className}
+            ${bold ? 'bold' : ''}
+            ${direction === 'left' ? 'arrow-left' : ''} 
+            ${direction === 'right' ? 'arrow-right' : ''} 
+            ${className}
         `} {...otherProps}></span>
     )
 }

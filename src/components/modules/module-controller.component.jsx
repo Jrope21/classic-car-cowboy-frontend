@@ -6,14 +6,14 @@ import FeaturedCarsListing from './featured-cars-listing/featured-cars-listing.c
 import FullWidthTextWithButton from './featured-content/full-width-text-with-button/full-width-text-with-button.component.jsx';
 import CarsCarousel from './cars-carousel/cars-carousel.component.jsx';
 
-function ModuleController({ acf, cars }) {
-    console.log(acf)
+function ModuleController({ acf, cars, global }) {
+    console.log(global);
     function renderCorrectLayout(acfModule, key) {
         const { acf_fc_layout : layout } = acfModule
 
         switch (layout) {
             case "cars_carousel":
-                return <CarsCarousel acf={acfModule} cars={cars} />
+                return <CarsCarousel acf={acfModule} cars={cars} global={global} />
             case "featured_content":
                 return renderFeaturedContentLayouts(acfModule, key)
             case "featured_cars_listing": 

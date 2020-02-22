@@ -1,8 +1,61 @@
-
+@import '../../../styles/global.variables.scss';
 
 .cars-carousel {
+    
+    .cars-slider {
+        padding: 0 1.5rem;
+        margin-bottom: 1rem;
+    }
 
-    img {
-        width: 250px;
+    .arrow-right, .arrow-left {
+        position: absolute; 
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+    }
+
+    .arrow-right {
+        right: -24px;
+    }
+
+    .arrow-left {
+        left: -24px;
+    }
+
+    .slider-top-bar {
+        display: flex;
+        margin-bottom: .75rem;
+    }
+
+    .facebook-icon {
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+        background: color(body_txt);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 .5rem 0 0;
+        transition: .3s ease;
+        
+        &:hover {
+            background: color(facebook);
+        }
+
+        > svg {
+            width: 10px;
+            height: 17px;
+        }     
+    }
+
+    h1 {
+        font-size: px-to-rem(22px);
+        font-weight: 500;
+
+        @media (min-width: breakpoint(md)) {
+            font-size: px-to-rem(28px);
+        }
     }
 }

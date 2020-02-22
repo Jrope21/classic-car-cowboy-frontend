@@ -3,11 +3,11 @@ import './logo.styles.scss';
 
 import HatLogo from '../../images/Logo-hat.svg';
 
-function Logo() {
+function Logo({ ...otherProps }) {
     
     return (
         <>
-            <img src={HatLogo} alt="wasssupp"/>
+            <img {...otherProps} src={HatLogo} alt="wasssupp"/>
         </>
     )
 }

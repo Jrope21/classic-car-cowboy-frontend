@@ -1,10 +1,24 @@
 @import '../../../../styles/global.variables.scss';
 
 .full-width-text-with-button {
+
+    > div {
+        @media (min-width: breakpoint(sm)) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } 
+    }
+
     h1 {
         font-size: px-to-rem(28px);
         margin-bottom: 20px;
         line-height: 38px;
+
+        @media (min-width: breakpoint(sm)) {
+            width: 70%;
+            margin: 0;
+        }
         
         @media (min-width: breakpoint(md)) {
             font-size: px-to-rem(44px);

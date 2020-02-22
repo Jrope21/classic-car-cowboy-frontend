@@ -1,0 +1,23 @@
+@import '../../../styles/global.variables.scss';
+
+.facebook-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    background: color(body_txt);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 .5rem 0 0;
+    transition: .3s ease;
+    
+    &:hover {
+        background: color(facebook);
+    }
+
+    > svg {
+        width: 10px;
+        height: 17px;
+    }     
+}

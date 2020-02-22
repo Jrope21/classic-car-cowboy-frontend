@@ -1,12 +1,16 @@
 @import '../../styles/global.variables.scss';
 
 footer {
-    text-align: center;
+    // text-align: center;
+    background: color(primary_extra_light);
     color: color(body_txt);
     width: 100%;
     bottom: 0;
 
     .top-bar {
+        padding-top: 45px;
+        padding-bottom: 45px;
+
         p {
             font-size: px-to-rem(12px);
             margin: 2px 0;
@@ -17,7 +21,64 @@ footer {
             text-decoration: underline;
             margin: 3px 0 8px 0;
         }
+
+        .footer-logo {
+            width: 100px;
+        }
     }
+
+    .logo-copyright-container {
+        margin-top: 30px;
+    }
+
+    p.copyright {
+        margin-top: 8px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .footer-facebook-icon {
+        margin-right: 10px;
+    }
+
+    .ccc-logo-title {
+        font-size: px-to-rem(24px);
+        font-weight: 500;
+        margin-bottom: 12px;
+
+        @media (min-width: breakpoint(md)) {
+            font-size: px-to-rem(28px);
+        }
+    }
+
+    .footer-menu {
+        columns: 2;
+    }
+
+    li {
+        padding-top: .75rem;
+
+        a {
+            font-weight: 700;
+            font-size: px-to-rem(12px);
+            text-transform: uppercase;
+    
+            @media (min-width: breakpoint(md)) {
+                position: relative;
+                overflow-x: hidden;
+            }
+    
+            @media (min-width: breakpoint(lg)) {
+                font-size: px-to-rem(14px);
+            }
+    
+            &:hover {
+                color: color(accent);
+            }
+        }
+    }
+
+    
 
     .bottom-bar {
         background: color(primary_extra_light);

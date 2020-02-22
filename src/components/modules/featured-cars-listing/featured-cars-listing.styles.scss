@@ -5,14 +5,31 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    
+    @media (min-width: breakpoint(sm)) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
 }
 
 .car-listing {
+
+    @media (min-width: breakpoint(sm)) {
+        box-sizing: border-box;
+        width: 33%;
+        padding: 0 1rem;
+    }
+
     .car-thumb {
         position: relative;
-        height: 300px;
+        height: 220px;
         width: 100%;
+        
+
+        @media (min-width: breakpoint(sm)) {
+            height: 150px;
+        }
 
         &::before {
             content: '';
@@ -32,6 +49,7 @@
         }
 
         .availability {
+            font-size: px-to-rem(12px);
             position: absolute;
             top: 12px;
             left: 12px;
@@ -45,9 +63,11 @@
         .car-name {
             text-transform: uppercase;
             font-weight: bold;
+            font-size: px-to-rem(16px);
         }
 
         .model {
+            font-size: px-to-rem(14px);
             font-weight: 500;
             margin-bottom: .1rem;
         }

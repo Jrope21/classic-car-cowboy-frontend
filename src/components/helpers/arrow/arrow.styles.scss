@@ -1,3 +1,5 @@
+@import '../../../styles/global.variables.scss';
+
 .arrow {
     display: block;
     position: relative;
@@ -11,15 +13,22 @@
 
     &::before, &::after {
         content: " ";
+        background: color(body_txt);
         position: absolute;
         right: 0;
         height: 100%;
         width: 2px;
-        opacity: 0.7;
+        // opacity: 0.7;
         -webkit-transform-origin: 50% 100% 0;
         transform-origin: 50% 100% 0;
         -webkit-transition: -webkit-transform 0.15s ease-out;
         transition: transform 0.15s ease-out;
+    }
+
+    &.bold {
+        &::before, &::after {
+            width: 3px;
+        }
     }
 
     &.arrow-right {

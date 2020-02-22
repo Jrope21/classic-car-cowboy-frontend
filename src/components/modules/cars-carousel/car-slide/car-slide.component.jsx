@@ -1,7 +1,7 @@
 import React from 'react';
 import './car-slide.styles.scss';
 
-function CarSlide() {
+function CarSlide({ src, alt }) {
 
     return (
         <div className="car-slide">

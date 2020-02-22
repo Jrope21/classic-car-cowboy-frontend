@@ -1,0 +1,13 @@
+@import '../../../../styles/global.variables.scss';
+
+.car-slide {
+    margin-right: .5rem;
+
+    img {
+        width: 250px;
+
+        @media (min-width: breakpoint(sm)) {
+            width: 200px;
+        }
+    }
+}

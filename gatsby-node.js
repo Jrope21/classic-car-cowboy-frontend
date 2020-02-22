@@ -44,7 +44,7 @@ exports.createPages = async ({ actions }) => {
             navigation: NAVIGATION_ITEMS,
             page: page,
             cars: CARS_DATA,
-            globalInfo: GLOBAL_DATA
+            global: GLOBAL_DATA
           }
         }) 
     })
