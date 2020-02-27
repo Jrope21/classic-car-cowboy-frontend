@@ -2,7 +2,7 @@
 
 .featured-car-slide {
     display: block;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
     max-width: 350px;
     margin: 0 auto;
@@ -36,6 +36,10 @@
                 display: none;
             }
         }
+
+        @media (min-width: breakpoint(lg)) {
+            margin-top: 50px;
+        }
         
     }
     
@@ -49,6 +53,10 @@
     .car-name {
         text-transform: uppercase;
         margin-bottom: 15px;
+
+        @media (min-width: breakpoint(lg)) {
+            font-size: px-to-rem(20px);
+        }
     }
 
     .car-year {
@@ -59,5 +67,9 @@
         font-size: px-to-rem(14px);
         display: block;
         margin-bottom: 2px;
+
+        @media (min-width: breakpoint(lg)) {
+            font-size: px-to-rem(16px);
+        }
     }
 }

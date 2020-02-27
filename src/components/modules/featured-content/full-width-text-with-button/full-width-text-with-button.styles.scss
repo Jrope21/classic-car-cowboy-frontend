@@ -18,20 +18,20 @@
         @media (min-width: breakpoint(sm)) {
             width: 70%;
             margin: 0;
-            line-height: 42px;
-            // font-size: px-to-rem(36px);
+            line-height: 48px;
+            font-size: px-to-rem(36px);
         }
         
-        @media (min-width: breakpoint(md)) {
-            width: 75%;
+        @media (min-width: breakpoint(lg)) {
+            width: 65%;
             font-size: px-to-rem(44px);
             line-height: 60px;
             margin-bottom: 0;
         }
 
-        @media (min-width: breakpoint(lg)) {
-            width: 65%;
-        }
+        // @media (min-width: breakpoint(lg)) {
+        //     width: 65%;
+        // }
     }
 
 }
