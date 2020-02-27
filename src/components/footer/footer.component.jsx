@@ -26,7 +26,7 @@ function Footer({ global }) {
                     </ul>
                     <div className="logo-copyright-container">
                         <Logo className={'footer-logo'} />
-                        <p className="copyright"><FacebookIcon className="footer-facebook-icon" url={facebook_url} />@{new Date().getFullYear()} Classic Car Cowboy</p>
+                        <p className="copyright">{/*<FacebookIcon className="footer-facebook-icon" url={facebook_url} />*/}@{new Date().getFullYear()} Classic Car Cowboy</p>
                     </div>
                 </div>
             </div>

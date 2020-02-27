@@ -8,17 +8,35 @@
     @media (min-width: breakpoint(sm)) {
         flex-direction: row;
         flex-wrap: wrap;
-        margin-left: -1rem;
-        margin-right: -1rem;
     }
 }
 
 .car-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (min-width: breakpoint(sm)) {
         box-sizing: border-box;
         width: 33%;
+        
+        // max-width: calc($container_max / 3);
         padding: 0 1rem;
+    }
+
+    &:first-of-type {
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    &:nth-of-type(4n) {
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    &:nth-of-type(3n) {
+        padding-right: 0;
+        align-items: flex-end;
     }
 
     .car-thumb {
@@ -28,7 +46,10 @@
         
 
         @media (min-width: breakpoint(sm)) {
-            height: 150px;
+            width: 25vw;
+            height: 15vw;
+            max-height: 200px;
+            max-width: 330px;
         }
 
         &::before {
@@ -60,6 +81,13 @@
     .car-text {
         border-bottom: 1px solid color(secondary);
         padding: .5rem 0;
+        width: 100%;
+
+        @media (min-width: breakpoint(sm)) {
+            width: 25vw;
+            max-height: 200px;
+            max-width: 330px;
+        }
         .car-name {
             text-transform: uppercase;
             font-weight: bold;

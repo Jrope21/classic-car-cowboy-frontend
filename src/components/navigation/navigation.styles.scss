@@ -40,10 +40,6 @@ header {
         @media (min-width: breakpoint(md)) {
             height: $md_nav_height;
         }
-
-        // @media (min-width: breakpoint(lg)) {
-        //     height: 70px;
-        // }
     }
 
     @media (min-width: breakpoint(md)) {
@@ -105,6 +101,7 @@ header {
             transform: unset;
             position: static;
             width: 100%;
+            height: auto;
             flex-direction: row;
             justify-content: flex-end;
             overflow: visible;

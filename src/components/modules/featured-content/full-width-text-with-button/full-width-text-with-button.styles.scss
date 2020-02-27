@@ -23,8 +23,14 @@
         }
         
         @media (min-width: breakpoint(md)) {
+            width: 75%;
             font-size: px-to-rem(44px);
+            line-height: 60px;
             margin-bottom: 0;
+        }
+
+        @media (min-width: breakpoint(lg)) {
+            width: 65%;
         }
     }
 
