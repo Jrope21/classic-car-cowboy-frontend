@@ -17,7 +17,7 @@ function Footer({ global }) {
                 <div className="menu-logo-container">
                     <ul className="footer-menu">
                         {footerMenuData.map(({ title, slug }, i) => (
-                            <li>
+                            <li key={title + i}>
                                 <Link to={slug} activeClassName="active-footer">
                                     {title}
                                 </Link>

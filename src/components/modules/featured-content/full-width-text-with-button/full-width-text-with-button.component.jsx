@@ -1,7 +1,6 @@
 import React from 'react';
 import './full-width-text-with-button.styles.scss';
 
-import { Link } from 'gatsby';
 import CCCButtonLink from '../../../helpers/ccc-button-link/ccc-button-link.component';
 
 function FullWidthTextWithButton({ acf }) {

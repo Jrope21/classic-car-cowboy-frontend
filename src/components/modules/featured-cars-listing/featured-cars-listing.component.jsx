@@ -1,7 +1,7 @@
 import React from 'react';
 import './featured-cars-listing.styles.scss';
 
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 
 import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
 

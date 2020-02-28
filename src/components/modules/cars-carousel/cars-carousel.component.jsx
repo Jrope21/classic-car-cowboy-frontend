@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './cars-carousel.styles.scss';
 
-import { FaFacebookF } from 'react-icons/fa'
+import { FaFacebookF } from 'react-icons/fa';
 
 import Slider from "react-slick";
 
@@ -12,11 +12,7 @@ import CarSlide from './car-slide/car-slide.component';
 
 function CarsCarousel({ acf, cars, global: { facebook_url }}) {
 
-
-
     const CarouselCars = cars.slice(0, 10);
-    console.log(CarouselCars)
-    let slider = useRef();
 
     const carouselSettings = {
       dots: false,
@@ -41,7 +37,7 @@ function CarsCarousel({ acf, cars, global: { facebook_url }}) {
                   </a>
                   <h1 className="title">Classic Car Cowboy</h1>
                 </div>
-                <Slider {...carouselSettings} ref={c => (c = slider = c)}>
+                <Slider {...carouselSettings} >
                     {CarouselCars.map(({ acf: { car_images }}, i) => (
                       <CarSlide src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} />
                     ))}

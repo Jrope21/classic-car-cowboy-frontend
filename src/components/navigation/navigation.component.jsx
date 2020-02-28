@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './navigation.styles.scss'
 
-import { Link, useStaticQuery, graphql} from 'gatsby'
+import { Link } from 'gatsby'
 
 import Hamburger from './hamburger/hamburger.component.jsx';
 import Logo from '../logo/logo.component.jsx';
