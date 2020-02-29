@@ -7,271 +7,312 @@
 // ********************************************************
 
 
+// not sure if I will add typographic for blog style pages?? -- may delete
 // @import './vendor/typographic/scss/typographic.scss';
+// @include typographic;
 @import './vendor/slick/slick.scss';
 @import './global.variables.scss';
-@import './reset-normalize.styles.scss';
+@import './vendor/reset-normalize.styles.scss';
+@import './global-components/theme-globals.styles.scss';
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: $font_base;
+// body, html {
+//   margin: 0;
+//   padding: 0;
+//   font-family: $font_base;
 
-}
+// }
 
-body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
+// body {
+//   overflow-x: hidden;
+//   max-width: 100vw;
+// }
 
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .container {
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-@media screen and (min-width: breakpoint(sm)){
-  .container {
-    padding-right: 2.8rem; // 44.8px
-    padding-left: 2.8rem;
-  }
-}
+// @media screen and (min-width: breakpoint(sm)){
+//   .container {
+//     padding-right: 2.8rem; // 44.8px
+//     padding-left: 2.8rem;
+//   }
+// }
 
-@media (min-width: breakpoint(md)){ 
-  .container {
-      padding-right: 4.2rem;
-      padding-left: 4.2rem;
-  }
-}
+// @media (min-width: breakpoint(md)){ 
+//   .container {
+//       padding-right: 4.2rem;
+//       padding-left: 4.2rem;
+//   }
+// }
 
-@media (min-width: breakpoint(lg)){
-  .container {
-      max-width: calc(#{$container_max} + 8.4rem); 
-      box-sizing: border-box;
-  }
-}
+// @media (min-width: breakpoint(lg)){
+//   .container {
+//       max-width: calc(#{$container_max} + 8.4rem); 
+//       box-sizing: border-box;
+//   }
+// }
 
-@keyframes exitScreen {
-  100% {
-    transform: translateX(-9999px);
-  }
-}
+// .page-background {
+//   background-image: url('../images/background-repeatable.png');
+//   position: fixed;
+//   opacity: .35;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   z-index: -1;
+// }
 
-.page-background {
-  background-image: url('../images/background-repeatable.png');
-  position: fixed;
-  opacity: .35;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: -1;
-}
+// .module {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
 
-.module {
-  padding-top: 60px;
-  padding-bottom: 60px;
+//   &.has-inner-modules {
+//       padding-bottom: 15px;
 
-  &.has-inner-modules {
-      padding-bottom: 15px;
+//       @media (min-width: breakpoint(lg)) {
+//           padding-bottom: 30px;
+//       }
+//   }
 
-      @media (min-width: breakpoint(lg)) {
-          padding-bottom: 30px;
-      }
-  }
+//   @media (min-width: breakpoint(lg)) {
+//       padding-top: 120px;
+//       padding-bottom: 120px;
+//   }
+// }
 
-  @media (min-width: breakpoint(lg)) {
-      padding-top: 120px;
-      padding-bottom: 120px;
-  }
-}
+// .inner-module {
+//   margin-bottom: 45px;
 
-.inner-module {
-  margin-bottom: 45px;
+//   @media (min-width: breakpoint(lg)) {
+//       margin-bottom: 90px;
+//   }
+// }
 
-  @media (min-width: breakpoint(lg)) {
-      margin-bottom: 90px;
-  }
-}
-
-button:focus {
-  outline: 0;
-}
+// button:focus {
+//   outline: 0;
+// }
 
   
-// ********************************************************
-// ********************************************************
-// **
-// **  Font Styles
-// **
-// ********************************************************
-// ********************************************************
+// // ********************************************************
+// // ********************************************************
+// // **
+// // **  Font Styles
+// // **
+// // ********************************************************
+// // ********************************************************
 
 
-main {
-  // 
+// main {
 
-    h1, h2, h3, h4, h5, h6 {
-      color: color(body_txt)
-    }
+//     h1, h2, h3, h4, h5, h6 {
+//       color: color(body_txt)
+//     }
 
-    .light-bg {
-      h1, h2, h3, h4, h5, h6 {
-        color: color(secondary);
-      }
-    }
+//     .light-bg {
+//       h1, h2, h3, h4, h5, h6 {
+//         color: color(secondary);
+//       }
+//     }
 
-    h3 {
-      font-size: px-to-rem(20px);
+//     h1 {
+//       font-weight: 700;
+//     }
 
-      @media (min-width: breakpoint(lg)) {
-          font-size: px-to-rem(24px);
-      }
-  }
+//     h3 {
+//       font-size: px-to-rem(20px);
+
+//       @media (min-width: breakpoint(lg)) {
+//           font-size: px-to-rem(24px);
+//       }
+//   }
     
-    p {
-      font-weight:400; 
-      font-style: normal;
-      color: color(body_txt);
-    }
+//     p {
+//       font-weight:400; 
+//       font-style: normal;
+//       color: color(body_txt);
+//     }
 
-    strong {
-      font-weight: 900;
-    }
-}
+//     strong {
+//       font-weight: 900;
+//     }
+// }
 
-.the-content { // default styling for wordpress WYSIWIG
-  // @include typographic;
-  h1 {
-      font-size: px-to-rem(32px);
-      font-weight: 500;
-      line-height: 40px;
+// .the-content { // default styling for wordpress WYSIWIG
 
-      @media (min-width: breakpoint(lg)) {
-          font-size: px-to-rem(48px);
-      }
+//   h1 {
+//       font-size: px-to-rem(32px);
+//       font-weight: 500;
+//       line-height: 40px;
 
-      em {
-          font-weight: 300;
-      }
-  }
+//       @media (min-width: breakpoint(lg)) {
+//           font-size: px-to-rem(48px);
+//       }
 
-  h3 {
-      font-size: px-to-rem(20px);
-      font-weight: bold;
-      margin-bottom: 20px;
+//       em {
+//           font-weight: 300;
+//       }
+//   }
 
-      @media (min-width: breakpoint(lg)) {
-          font-size: px-to-rem(24px);
-          margin-bottom: 30px;
-      }
-  }
+//   h3 {
+//       font-size: px-to-rem(20px);
+//       font-weight: bold;
+//       margin-bottom: 20px;
 
-  p {
-      margin-bottom: 20px;
-      line-height: 26px;
-      font-size: px-to-rem(16px);
+//       @media (min-width: breakpoint(lg)) {
+//           font-size: px-to-rem(24px);
+//           margin-bottom: 30px;
+//       }
+//   }
 
-      @media (min-width: breakpoint(lg)) {
-        line-height: 30px;
-        font-size: px-to-rem(18px);
-        margin-bottom: 30px;
-      }
-  }
-}
+//   p {
+//       margin-bottom: 20px;
+//       line-height: 26px;
+//       font-size: px-to-rem(16px);
 
-
-// ********************************************************
-// ********************************************************
-// **
-// **  Helpers
-// **
-// ********************************************************
-// ********************************************************
+//       @media (min-width: breakpoint(lg)) {
+//         line-height: 30px;
+//         font-size: px-to-rem(18px);
+//         margin-bottom: 30px;
+//       }
+//   }
+// }
 
 
-.success {
-  color: color(success);
-}
-
-.error {
-  color: color(error);
-}
-
-.grid-x {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.facebook {
-  color: color(facebook);
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.show-for-sr {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal !important;
-}
-
-.overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.ccc-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 110px;
-  height: 35px;
-  border-radius: 2px;
-  font-size: px-to-rem(13px);
-  color: color(success);
-  border: 1px solid;
-  transition: .2s ease;
-
-  @media (min-width: breakpoint(lg)) {
-      font-size: px-to-rem(15px);
-      width: 125px;
-      height: 40px;
-  }
-
-  &:hover {
-      color: color(accent);
-  }
-}
-
-.light-bg {
-    background: rgba(255, 255, 255, 0.75);
-}
+// // ********************************************************
+// // ********************************************************
+// // **
+// // **  Helpers
+// // **
+// // ********************************************************
+// // ********************************************************
 
 
-// ********************************************************
-// ********************************************************
-// **
-// **  Animations
-// **
-// ********************************************************
-// ********************************************************
+// .success {
+//   color: color(success);
+// }
+
+// .error {
+//   color: color(error);
+// }
+
+// .grid-x {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .facebook {
+//   color: color(facebook);
+// }
+
+// .bold {
+//   font-weight: 700;
+// }
+
+// .show-for-sr {
+//   border: 0;
+//   clip: rect(1px, 1px, 1px, 1px);
+//   clip-path: inset(50%);
+//   height: 1px;
+//   margin: -1px;
+//   overflow: hidden;
+//   padding: 0;
+//   position: absolute;
+//   width: 1px;
+//   word-wrap: normal !important;
+// }
+
+// .overlay {
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .ccc-button {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 110px;
+//   height: 35px;
+//   border-radius: 2px;
+//   font-size: px-to-rem(13px);
+//   color: color(success);
+//   border: 1px solid;
+//   transition: .2s ease;
+
+//   @media (min-width: breakpoint(lg)) {
+//       font-size: px-to-rem(15px);
+//       width: 125px;
+//       height: 40px;
+//   }
+
+//   &:hover {
+//       color: color(accent);
+//   }
+// }
+
+// .light-bg {
+//     background: rgba(255, 255, 255, 0.75);
+// }
 
 
-@keyframes leaveScreen {
-  100%{
-    transform: translateX(9999px)
-  }
-}
+// // ********************************************************
+// // ********************************************************
+// // **
+// // **  Animations
+// // **
+// // ********************************************************
+// // ********************************************************
+
+
+// @keyframes leaveScreen {
+//   100%{
+//     transform: translateX(9999px)
+//   }
+// }
+
+// .slick-dots {
+//   li {
+//     position: relative;
+//     border: 1px solid;
+//     width: 14px;
+//     height: 14px;
+//     border-radius: 100%;
+//     margin: 0 5px;
+
+//     @media (min-width: breakpoint(sm)) { 
+//         margin: 3px 0;
+//     }
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         border-radius: 100%;
+//         width: 14px;
+//         height: 14px;
+//         background: color(accent);
+//         opacity: 0;
+//         transition: opacity .15s ease;
+//     }
+
+//     button {
+//         position: relative;
+//         z-index: 1;
+
+//         &::before {
+//             display: none;
+//         }
+//     }
+
+//     &.slick-active::before {
+//         opacity: 1;
+//     }
+//   }
+// }

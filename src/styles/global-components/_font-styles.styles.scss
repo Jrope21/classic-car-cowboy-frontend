@@ -1,0 +1,83 @@
+// ********************************************************
+// ********************************************************
+// **
+// **  Font Styles
+// **
+// ********************************************************
+// ********************************************************
+
+
+main {
+
+    h1, h2, h3, h4, h5, h6 {
+      color: color(body_txt)
+    }
+
+    .light-bg {
+      h1, h2, h3, h4, h5, h6 {
+        color: color(secondary);
+      }
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: px-to-rem(20px);
+
+      @media (min-width: breakpoint(lg)) {
+          font-size: px-to-rem(24px);
+      }
+  }
+    
+    p {
+      font-weight:400; 
+      font-style: normal;
+      color: color(body_txt);
+    }
+
+    strong {
+      font-weight: 900;
+    }
+}
+
+.the-content { // default styling for wordpress WYSIWIG
+
+  h1 {
+      font-size: px-to-rem(32px);
+      font-weight: 500;
+      line-height: 40px;
+
+      @media (min-width: breakpoint(lg)) {
+          font-size: px-to-rem(48px);
+      }
+
+      em {
+          font-weight: 300;
+      }
+  }
+
+  h3 {
+      font-size: px-to-rem(20px);
+      font-weight: bold;
+      margin-bottom: 20px;
+
+      @media (min-width: breakpoint(lg)) {
+          font-size: px-to-rem(24px);
+          margin-bottom: 30px;
+      }
+  }
+
+  p {
+      margin-bottom: 20px;
+      line-height: 26px;
+      font-size: px-to-rem(16px);
+
+      @media (min-width: breakpoint(lg)) {
+        line-height: 30px;
+        font-size: px-to-rem(18px);
+        margin-bottom: 30px;
+      }
+  }
+}

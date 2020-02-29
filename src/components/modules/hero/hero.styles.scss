@@ -2,9 +2,18 @@
 
 .hero {
     display: flex;
+    flex-direction: column-reverse;
+
+    .title {
+        font-size: px-to-rem(24px);
+        text-transform: uppercase;
+    }
 
     .hero-slider {
-        width: 50%;
+
+        @media (min-width: breakpoint(sm)) {
+            width: 50%;
+        }  
     }
 
     .slide-container {

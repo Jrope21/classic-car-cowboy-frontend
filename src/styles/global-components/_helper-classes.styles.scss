@@ -1,0 +1,79 @@
+// ********************************************************
+// ********************************************************
+// **
+// **  Helpers
+// **
+// ********************************************************
+// ********************************************************
+
+
+
+.success {
+    color: color(success);
+  }
+  
+.error {
+    color: color(error);
+}
+  
+.grid-x {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.facebook {
+    color: color(facebook);
+}
+  
+.bold {
+    font-weight: 700;
+}
+  
+.show-for-sr {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+  
+.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.ccc-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 35px;
+    border-radius: 2px;
+    font-size: px-to-rem(13px);
+    color: color(success);
+    border: 1px solid;
+    transition: .2s ease;
+  
+    @media (min-width: breakpoint(lg)) {
+        font-size: px-to-rem(15px);
+        width: 125px;
+        height: 40px;
+    }
+  
+    &:hover {
+        color: color(accent);
+    }
+}
+  
+.light-bg {
+    background: rgba(255, 255, 255, 0.75);
+}
