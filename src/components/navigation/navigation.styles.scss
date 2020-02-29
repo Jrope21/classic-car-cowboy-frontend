@@ -186,9 +186,13 @@ header {
 
         .right {
            flex: 1;
-
+            
            @media (min-width: breakpoint(md)) {
                 flex: none;
+
+                ul li:last-of-type a {
+                    padding-right: 0;
+                }
             }
         }
 
