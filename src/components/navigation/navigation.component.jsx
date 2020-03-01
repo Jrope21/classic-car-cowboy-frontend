@@ -8,6 +8,8 @@ import Logo from '../logo/logo.component.jsx';
 import CloseBtn from '../helpers/close-btn/close-btn.component';
 import Arrow from '../helpers/arrow/arrow.component';
 
+// need to add static query back
+
 function Navigation({ navigation }) {
 
     const [navVisible, setNavVisible] = useState(false)

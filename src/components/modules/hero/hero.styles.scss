@@ -9,6 +9,15 @@
         text-transform: uppercase;
     }
 
+    .slick-dots {
+        position: static;
+
+        ul {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
     .hero-slider {
 
         @media (min-width: breakpoint(sm)) {
