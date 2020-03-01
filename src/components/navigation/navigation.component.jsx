@@ -10,10 +10,10 @@ import Arrow from '../helpers/arrow/arrow.component';
 
 // need to add static query back
 
-function Navigation({ navigation }) {
+function Navigation({ navigation, global }) {
 
     const [navVisible, setNavVisible] = useState(false)
-    
+    console.log(navigation.items)
     const leftNavigation = navigation.items.slice(0, Math.ceil(navigation.items.length / 2));
     const rightNavigation = navigation.items.slice(Math.ceil(navigation.items.length / 2));
 

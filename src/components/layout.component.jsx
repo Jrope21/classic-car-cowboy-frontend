@@ -5,9 +5,10 @@ import Navigation from "./navigation/navigation.component.jsx";
 import Footer from './footer/footer.component.jsx';
 import "../styles/global.styles.scss";
 
-const Layout = ({ children, global, navigation, ...props }) => {
+const Layout = ({ children, pageContext: {navigation, global}}) => {
+  // { children, global, navigation, ...props }
 
-  return (
+  if(navigation && global) return (
     <div className="app">
       <span className="page-background"></span>
       <Navigation navigation={navigation} global={global} />
@@ -17,6 +18,7 @@ const Layout = ({ children, global, navigation, ...props }) => {
       <Footer global={global} />
     </div>
   )
+  return null;
 }
 
 Layout.propTypes = {

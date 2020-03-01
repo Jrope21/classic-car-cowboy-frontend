@@ -7,13 +7,7 @@ function Standard({pageContext: { page, cars, global, navigation } }) {
 
     const {acf: { layout }} = page;
 
-    return  <Layout navigation={navigation} global={global}>
-        <ModuleController cars={cars} acf={layout} global={global} />
-    </Layout>
+    return  <ModuleController cars={cars} acf={layout} global={global} />
 }
 
 export default Standard;
-
-{/* <Layout navigation={navigation} global={global}>
-<ModuleController cars={cars} acf={layout} global={global} />
-</Layout> */}
