@@ -7,13 +7,16 @@ import FullWidthTextWithButton from './featured-content/full-width-text-with-but
 import CarsCarousel from './cars-carousel/cars-carousel.component.jsx';
 import Hero from './hero/hero.component.jsx';
 import ImageWithText from './featured-content/image-with-text/image-with-text.component.jsx';
+import AllCarsGallery from './all-cars-gallery/all-cars-gallery.component.jsx';
 
 function ModuleController({ acf, cars, global }) {
-    // console.log(global);
+    
     function renderCorrectLayout(acfModule, key) {
         const { acf_fc_layout : layout } = acfModule
-
+        console.log(layout)
         switch (layout) {
+            case "all_cars_gallery":
+                return <AllCarsGallery cars={cars} key={key} />
             case "hero":
                 return <Hero acf={acfModule} key={key}/>
             case "cars_carousel":

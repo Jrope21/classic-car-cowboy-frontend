@@ -48,12 +48,17 @@
     .hero-slider {
         margin-bottom: 20px;
         @media (min-width: breakpoint(sm)) {
-            width: 50%;
+            width: 55%;
             padding-right: 25px;
         }  
 
         @media (min-width: breakpoint(md)) {
+            width: 52.5%;
             padding-right: 30px;
+        }
+
+        @media (min-width: breakpoint(lg)) {
+            
         }
     }
 
