@@ -21,7 +21,7 @@ function FeaturedCarsListing({acf, cars}) {
                     >
                         {car_availability ? 'Available' : 'Not Available'}
                     </span>
-                        <img src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} />
+                        <img className="img-cover" src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} />
                     </div>
                     <div className="car-text">
                         <p className="model">{`${car_year}`}</p>

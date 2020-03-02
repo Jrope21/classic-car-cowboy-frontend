@@ -6,6 +6,7 @@ import FeaturedCarsListing from './featured-cars-listing/featured-cars-listing.c
 import FullWidthTextWithButton from './featured-content/full-width-text-with-button/full-width-text-with-button.component.jsx';
 import CarsCarousel from './cars-carousel/cars-carousel.component.jsx';
 import Hero from './hero/hero.component.jsx';
+import ImageWithText from './featured-content/image-with-text/image-with-text.component.jsx';
 
 function ModuleController({ acf, cars, global }) {
     // console.log(global);
@@ -32,10 +33,12 @@ function ModuleController({ acf, cars, global }) {
 
     function renderFeaturedContentLayouts(acfModule, key) {
         const { display } = acfModule
-        // console.log('test', acfModule)
+        console.log(display)
         switch (display) {
             case "full_width_text_with_button":
                 return <FullWidthTextWithButton acf={acfModule} key={key} />
+            case "image_left_with_text":
+                return <ImageWithText acf={acfModule} key={key} />
             default:
                 return null
         }

@@ -8,19 +8,20 @@ import Logo from '../logo/logo.component.jsx';
 import CloseBtn from '../helpers/close-btn/close-btn.component';
 import Arrow from '../helpers/arrow/arrow.component';
 
-// need to add static query back
+// TODO -- merge "left side" && "right side" navigation into one
+// - this is no longer needed because of a change in design
 
 function Navigation({ navigation, global }) {
 
     const [navVisible, setNavVisible] = useState(false)
-    console.log(navigation.items)
+
     const leftNavigation = navigation.items.slice(0, Math.ceil(navigation.items.length / 2));
     const rightNavigation = navigation.items.slice(Math.ceil(navigation.items.length / 2));
 
     function renderNavigationItems(menuItems) { // this is running every rerender -- might need to readjust this
         return menuItems.map(({title, slug}, i) => (
             <li key={i}>
-                <Link to={`/${slug}`} activeClassName="active-nav">{title} <Arrow className="menu-arrow" direction={'right'} /></Link>          
+                <Link onClick={closeNav} to={`/${slug}`} activeClassName="active-nav">{title} <Arrow className="menu-arrow" direction={'right'} /></Link>          
             </li>
         ))
     }
@@ -59,7 +60,7 @@ function Navigation({ navigation, global }) {
                                     <CloseBtn onClick={() => closeNav()} />
                                 </li>
                                 <li className="home">
-                                    <Link to={`/`} activeClassName="active-nav">Home <Arrow className="menu-arrow" direction={'right'} /></Link>
+                                    <Link to={`/`} onClick={closeNav} activeClassName="active-nav">Home <Arrow className="menu-arrow" direction={'right'} /></Link>
                                 </li>
                                 {renderNavigationItems(leftNavigation)}
                             </ul>

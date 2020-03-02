@@ -1,0 +1,25 @@
+@import '../../../../styles/global.variables.scss';
+
+.image-with-text {
+
+    @media (min-width: breakpoint(sm)) {
+        display: flex;
+    }
+
+    .image-container {
+        height: 200px;
+        margin-bottom: 25px;
+
+        @media (min-width: breakpoint(sm)) {
+            height: 250px;
+        }
+
+        @media (min-width: breakpoint(md)) {
+            height: 300px;
+        }
+
+        @media (min-width: breakpoint(lg)) {
+            height: 350px;
+        }
+    }
+}

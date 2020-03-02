@@ -35,6 +35,13 @@ main {
       font-weight:400; 
       font-style: normal;
       color: color(body_txt);
+      line-height: 26px;
+      font-size: px-to-rem(16px);
+      @media (min-width: breakpoint(lg)) {
+        line-height: 30px;
+        font-size: px-to-rem(18px);
+      }
+      
     }
 
     strong {
@@ -71,12 +78,8 @@ main {
 
   p {
       margin-bottom: 20px;
-      line-height: 26px;
-      font-size: px-to-rem(16px);
 
       @media (min-width: breakpoint(lg)) {
-        line-height: 30px;
-        font-size: px-to-rem(18px);
         margin-bottom: 30px;
       }
   }

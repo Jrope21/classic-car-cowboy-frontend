@@ -21,7 +21,7 @@ function Hero({ acf: { title, content, link, images }}) {
 
 
     return (
-        <div className="hero container">
+        <div className="hero container module">
             <div className="hero-text">
                 <h1 className="title">The gallery</h1>
                 <p>We consistently stock high quality classic cars that are guaranteed to turn heads. Buy a piece of history with out selection of hot rods, exotics, collectables, and more!</p>
@@ -31,8 +31,8 @@ function Hero({ acf: { title, content, link, images }}) {
                 {images && 
                     <Slider {...carouselSettings}>
                         {images.map((image, i) => (
-                            <div className="slide-container">
-                                <img src={image.url} alt={image.alt} />
+                            <div className="slide-container img-dropshadow">
+                                <img className="img-cover" src={image.url} alt={image.alt} />
                             </div>
                         ))}
                     </Slider>

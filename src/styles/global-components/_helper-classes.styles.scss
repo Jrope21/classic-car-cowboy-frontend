@@ -42,6 +42,15 @@
     word-wrap: normal !important;
 }
   
+.img-dropshadow {
+    box-shadow: 3px 3px 3px lightgrey;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .overlay {
     display: block;
