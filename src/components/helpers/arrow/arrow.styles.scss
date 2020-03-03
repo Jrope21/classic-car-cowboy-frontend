@@ -47,10 +47,10 @@
     
         &:hover {
             &::before {
-                transform: rotate(-30deg);
+                transform: rotate(-35deg);
             }
             &::after {
-                transform: rotate(-150deg);
+                transform: rotate(-145deg);
             }
         }
     }
@@ -73,10 +73,10 @@
 
         &:hover {
             &::before {
-                transform: rotate(30deg);
+                transform: rotate(35deg);
             }
             &::after {
-                transform: rotate(150deg);
+                transform: rotate(145deg);
             }
         }
     }

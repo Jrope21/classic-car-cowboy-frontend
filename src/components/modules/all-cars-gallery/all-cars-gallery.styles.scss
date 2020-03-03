@@ -23,12 +23,36 @@
             padding-bottom: .5rem;
         }
 
-        // &:nth-of-type(1n + 4) {
+        &:nth-of-type(1n + 4) {
             
-        //     @media (min-width: breakpoint(sm)) {
-        //         padding-bottom: 0;
-        //         padding-top: .5rem;
-        //     }
-        // }
+            @media (min-width: breakpoint(sm)) {
+                padding-bottom: 0;
+                padding-top: .5rem;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+
+        span.pagination-number {
+            color: color(body_txt);
+            margin-right: .25rem;
+            display: block;
+
+            &:nth-last-child(2) {
+                margin: 0;
+            }
+        }
+    }
+
+    .pagination-next {
+        margin-left: .75rem;
+    }
+
+    .pagination-prev {
+        margin-right: .75rem;
     }
 }   

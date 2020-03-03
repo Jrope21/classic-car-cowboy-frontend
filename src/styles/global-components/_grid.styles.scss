@@ -39,23 +39,38 @@
   .module {
     padding-top: 60px;
     padding-bottom: 60px;
-  
-    &.has-inner-modules {
-        padding-bottom: 15px;
-  
-        @media (min-width: breakpoint(lg)) {
-            padding-bottom: 30px;
-        }
+
+    @media (min-width: breakpoint(md)) {
+        padding-top: 90px;
+        padding-bottom: 90px;
     }
-  
+
     @media (min-width: breakpoint(lg)) {
         padding-top: 120px;
         padding-bottom: 120px;
     }
+
+    &.has-inner-modules {
+        padding-bottom: 15px;
+
+        @media (min-width: breakpoint(md)) {
+          padding-bottom: 30px;
+        }
+  
+        @media (min-width: breakpoint(lg)) {
+            padding-bottom: 60px;
+        }
+    }
+  
+    
   }
   
   .inner-module {
     margin-bottom: 45px;
+
+    @media (min-width: breakpoint(md)) {
+        margin-bottom: 60px;
+    }
   
     @media (min-width: breakpoint(lg)) {
         margin-bottom: 90px;

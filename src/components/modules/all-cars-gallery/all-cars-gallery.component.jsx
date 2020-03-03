@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './all-cars-gallery.styles.scss'; 
+import Arrow from '../../helpers/arrow/arrow.component';
 
 function AllCarsGallery({ cars }) {
 
@@ -31,35 +32,41 @@ function AllCarsGallery({ cars }) {
         setActiveCars(groupedCars[indexOfCarGroup]);
     }
 
-    if (activeCars && groupedCars) return (
+    if (activeCars) return (
         <div className="all-cars-gallery container module">
             <div className="all-cars-container">
-                {activeCars.map(({acf: { car_images }}) => (
-                    <div className="car-thumb-container">
+                {activeCars.map(({acf: { car_images }}, i) => (
+                    <div key={car_images[0].image_selection.url + i} className="car-thumb-container">
                         <img src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} className="img-cover img-dropshadow"/>
                     </div>
                 ))}
             </div>
-            <div className="pagination">
-                {activeCarGroupIndex !== 0 ? 
-                    <button 
-                        className="prev"
-                        onClick={() => handleCarPagination(activeCarGroupIndex - 1)}
-                    >prev</button>
-                : null}
-                {groupedCars.map((carGroup, i) => (
-                    <span 
-                        className="pagination-number"
-                        onClick={() => handleCarPagination(i)}
-                    >{i}</span>
-                ))}
-                {groupedCars.length > 1 && activeCarGroupIndex !== groupedCars.length - 1 ? 
-                    <button 
-                        className="next"
-                        onClick={() => handleCarPagination(activeCarGroupIndex + 1)}
-                    >next</button> 
-                : null}
-            </div>
+            {groupedCars.length > 1 &&
+                <div className="pagination">
+                    <Arrow 
+                        className="pagination-prev"
+                        direction={'left'}
+                        onClick={() => handleCarPagination(
+                            activeCarGroupIndex === 0 ? groupedCars.length - 1 : activeCarGroupIndex - 1
+                        )}
+                    />
+                    {groupedCars.map((carGroup, i) => (
+                        <span 
+                            className={`pagination-number ${activeCarGroupIndex === i ? 'bold' : ''}`}
+                            onClick={() => handleCarPagination(i)}
+                            key={`active-car-${i}`}
+                        >{i === groupedCars.length - 1 ? i : `${i},`}</span>
+                    ))} 
+                    <Arrow
+                        className="pagination-next"
+                        direction={'right'}
+                        onClick={() => handleCarPagination(
+                            activeCarGroupIndex === groupedCars.length - 1 ? 0 : activeCarGroupIndex + 1
+                        )}
+                    /> 
+
+                </div>
+            }
         </div>
     )
 
