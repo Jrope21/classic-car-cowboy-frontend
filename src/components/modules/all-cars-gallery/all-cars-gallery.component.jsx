@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './all-cars-gallery.styles.scss'; 
 import Arrow from '../../helpers/arrow/arrow.component';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function AllCarsGallery({ cars }) {
 
@@ -34,13 +35,15 @@ function AllCarsGallery({ cars }) {
 
     if (activeCars) return (
         <div className="all-cars-gallery container module">
-            <div className="all-cars-container">
+            <TransitionGroup className="all-cars-container">
                 {activeCars.map(({acf: { car_images }}, i) => (
-                    <div key={car_images[0].image_selection.url + i} className="car-thumb-container">
-                        <img src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} className="img-cover img-dropshadow"/>
-                    </div>
+                    <CSSTransition key={car_images[0].image_selection.url + i + Math.random() * 10} timeout={300} classNames={`position-${i} car-thumb-container`}>
+                        <div className={`position-${i} car-thumb-container`}>
+                            <img src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} className="img-cover img-dropshadow"/>
+                        </div>
+                    </CSSTransition>
                 ))}
-            </div>
+            </TransitionGroup>
             {groupedCars.length > 1 &&
                 <div className="pagination">
                     <Arrow 
@@ -49,7 +52,7 @@ function AllCarsGallery({ cars }) {
                         onClick={() => handleCarPagination(
                             activeCarGroupIndex === 0 ? groupedCars.length - 1 : activeCarGroupIndex - 1
                         )}
-                    />
+                    />  
                     {groupedCars.map((carGroup, i) => (
                         <span 
                             className={`pagination-number ${activeCarGroupIndex === i ? 'bold' : ''}`}
