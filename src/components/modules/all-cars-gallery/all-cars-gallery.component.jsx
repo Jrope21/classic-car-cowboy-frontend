@@ -39,6 +39,10 @@ function AllCarsGallery({ cars }) {
                 {activeCars.map(({acf: { car_images }}, i) => (
                     <CSSTransition key={car_images[0].image_selection.url + i + Math.random() * 10} timeout={300} classNames={`position-${i} car-thumb-container`}>
                         <div className={`position-${i} car-thumb-container`}>
+                            <div className="text-pop-up">
+                                <p className="car-year"></p>
+                                <p className="car-name"></p>
+                            </div>
                             <img src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} className="img-cover img-dropshadow"/>
                         </div>
                     </CSSTransition>

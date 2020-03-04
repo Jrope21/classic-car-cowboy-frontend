@@ -2,9 +2,11 @@
 
 .image-with-text {
 
-    @media (min-width: breakpoint(sm)) {
-        display: flex;
-        justify-content: space-between;
+    > div {
+        @media (min-width: breakpoint(sm)) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     .image-container {
