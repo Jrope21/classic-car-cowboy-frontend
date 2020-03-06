@@ -13,10 +13,10 @@ function ModuleController({ acf, cars, global }) {
     
     function renderCorrectLayout(acfModule, key) {
         const { acf_fc_layout : layout } = acfModule
-        console.log(layout)
+        
         switch (layout) {
             case "all_cars_gallery":
-                return <AllCarsGallery cars={cars} key={key} />
+                return <AllCarsGallery cars={cars} acf={acfModule} key={key} />
             case "hero":
                 return <Hero acf={acfModule} key={key}/>
             case "cars_carousel":

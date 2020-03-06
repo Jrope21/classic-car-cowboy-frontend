@@ -3,8 +3,9 @@ import './all-cars-gallery.styles.scss';
 import Arrow from '../../helpers/arrow/arrow.component';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-function AllCarsGallery({ cars }) {
+function AllCarsGallery({ acf, cars }) {
 
+    console.log(acf)
     let carsPerGroup = 6;
     
     const [activeCarGroupIndex, setActiveCarGroupIndex] = useState(0);
@@ -35,6 +36,7 @@ function AllCarsGallery({ cars }) {
 
     if (activeCars) return (
         <div className="all-cars-gallery container module">
+            <div className="the-content top-content" dangerouslySetInnerHTML={{ __html: acf.content }}/>
             <TransitionGroup className="all-cars-container">
                 {activeCars.map(({acf: { car_images }}, i) => (
                     <CSSTransition key={car_images[0].image_selection.url + i + Math.random() * 10} timeout={300} classNames={`position-${i} car-thumb-container`}>
