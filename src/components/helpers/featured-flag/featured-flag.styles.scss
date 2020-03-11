@@ -1,0 +1,16 @@
+@import '../../../styles/global.variables.scss';
+
+.featured-flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: color(body_txt);
+    font-size: 12px;
+    font-weight: 300;
+    background: color(primary_transparent);
+    padding: .5rem .75rem;
+}
+
+// .a {
+//     display: none;
+// }

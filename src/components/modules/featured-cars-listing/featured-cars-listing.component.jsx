@@ -4,6 +4,7 @@ import './featured-cars-listing.styles.scss';
 // import { Link } from 'gatsby'
 
 import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
+import FeaturedFlag from '../../helpers/featured-flag/featured-flag.component';
 
 function FeaturedCarsListing({acf, cars}) {
 
@@ -15,12 +16,13 @@ function FeaturedCarsListing({acf, cars}) {
             {allSelectedCarInformation.map(({slug, acf: {car_model, car_year, car_availability, car_images}}, i) => (
                 <div className="car-listing inner-module">
                     <div className="car-thumb">
-                    <span className={`
-                        availability
-                        ${car_availability ? 'success' : 'error'}`}
-                    >
-                        {car_availability ? 'Available' : 'Not Available'}
-                    </span>
+                        <FeaturedFlag />
+                        <span className={`
+                            availability
+                            ${car_availability ? 'success' : 'error'}`}
+                        >
+                            {car_availability ? 'Available' : 'Not Available'}
+                        </span>
                         <img className="img-cover" src={car_images[0].image_selection.url} alt={car_images[0].image_selection.alt} />
                     </div>
                     <div className="car-text">
