@@ -8,8 +8,6 @@ import FacebookIcon from '../helpers/facebook-icon/facebook-icon.component';
 
 function Footer({ global }) {
 
-    const { full_name, phone_number, address, facebook_url } = global;
-
     return (
         <footer>
             <div className="container top-bar">

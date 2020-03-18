@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import './cars-carousel.styles.scss';
 
 import { FaFacebookF } from 'react-icons/fa';
@@ -8,9 +8,11 @@ import Slider from "react-slick";
 import Arrow from '../../helpers/arrow/arrow.component';
 import CarSlide from './car-slide/car-slide.component';
 
-// import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
+import { GlobalContext } from '../../../lib/context/_global.context';
 
-function CarsCarousel({ acf, cars, global: { facebook_url }}) {
+function CarsCarousel({ acf, cars }) {
+
+    const { facebook_url } = useContext(GlobalContext);
 
     const CarouselCars = cars.slice(0, 10);
 

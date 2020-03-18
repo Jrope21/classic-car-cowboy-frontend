@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import './navigation.styles.scss'
 
 import { Link } from 'gatsby'
@@ -8,10 +8,15 @@ import Logo from '../logo/logo.component.jsx';
 import CloseBtn from '../helpers/close-btn/close-btn.component';
 import Arrow from '../helpers/arrow/arrow.component';
 
+import { GlobalContext } from '../../lib/context/_global.context';
+
 // TODO -- merge "left side" && "right side" navigation into one
 // - this is no longer needed because of a change in design
 
 function Navigation({ navigation, global }) {
+
+    const globalCon = useContext(GlobalContext);
+    console.log('global context', globalCon)
 
     const [navVisible, setNavVisible] = useState(false)
 
