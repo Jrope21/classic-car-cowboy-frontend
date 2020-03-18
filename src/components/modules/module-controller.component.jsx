@@ -9,7 +9,7 @@ import Hero from './hero/hero.component.jsx';
 import ImageWithText from './featured-content/image-with-text/image-with-text.component.jsx';
 import AllCarsGallery from './all-cars-gallery/all-cars-gallery.component.jsx';
 
-function ModuleController({ acf, cars, global }) {
+function ModuleController({ acf, cars }) {
     
     function renderCorrectLayout(acfModule, key) {
         const { acf_fc_layout : layout } = acfModule
@@ -20,7 +20,7 @@ function ModuleController({ acf, cars, global }) {
             case "hero":
                 return <Hero acf={acfModule} key={key}/>
             case "cars_carousel":
-                return <CarsCarousel acf={acfModule} cars={cars} global={global} key={key} />
+                return <CarsCarousel acf={acfModule} cars={cars} key={key} />
             case "featured_content":
                 return renderFeaturedContentLayouts(acfModule, key)
             case "featured_cars_listing": 

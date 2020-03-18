@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/global.styles.scss";
 
 import Navigation from "./navigation/navigation.component.jsx";
 import Footer from './footer/footer.component.jsx';
-import "../styles/global.styles.scss";
+
 import { GlobalContext } from "../lib/context/_global.context.js";
 
 const Layout = ({ children, pageContext: {navigation, global}}) => (
