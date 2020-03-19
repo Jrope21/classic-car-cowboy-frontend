@@ -1,10 +1,13 @@
 // This is a temporary template for prototyping
 import React from 'react';
+import FilteredCarListing from '../components/inventory/filtered-car-listing/filtered-car-listing.component';
 
 function Inventory() {
 
     return  (
-        <h1>dis be da inventory template</h1>
+        <div className="inventory">
+            <FilteredCarListing />
+        </div>
     )
 }
 

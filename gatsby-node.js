@@ -39,7 +39,7 @@ exports.createPages = async ({ actions }) => {
     PAGES_DATA.forEach(page => {   
         createPage({
           path: `${page.slug === 'home' ? '/' : page.slug}`,
-          component: page.slug === inventory ? require.resolve(`./src/templates/inventory.route.jsx`) :
+          component: page.slug === 'inventory' ? require.resolve(`./src/templates/inventory.route.jsx`) :
             require.resolve(`./src/templates/standard.route.jsx`),
           context: {
             navigation: NAVIGATION_ITEMS,
