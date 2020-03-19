@@ -16,17 +16,17 @@ function ModuleController({ acf, cars }) {
         
         switch (layout) {
             case "all_cars_gallery":
-                return <AllCarsGallery cars={cars} acf={acfModule} key={key} />
+                return <AllCarsGallery acf={acfModule} key={key} />
             case "hero":
                 return <Hero acf={acfModule} key={key}/>
             case "cars_carousel":
-                return <CarsCarousel acf={acfModule} cars={cars} key={key} />
+                return <CarsCarousel acf={acfModule} key={key} />
             case "featured_content":
                 return renderFeaturedContentLayouts(acfModule, key)
             case "featured_cars_listing": 
-                return <FeaturedCarsListing cars={cars} acf={acfModule} key={key} />
+                return <FeaturedCarsListing acf={acfModule} key={key} />
             case "featured_cars_carousel":
-                return <FeaturedCarsCarousel cars={cars} acf={acfModule} key={key} />
+                return <FeaturedCarsCarousel acf={acfModule} key={key} />
             case "content_area":
                 return <ContentArea acf={acfModule} key={key} />
             default:
@@ -36,7 +36,7 @@ function ModuleController({ acf, cars }) {
 
     function renderFeaturedContentLayouts(acfModule, key) {
         const { display } = acfModule
-        console.log(display)
+
         switch (display) {
             case "full_width_text_with_button":
                 return <FullWidthTextWithButton acf={acfModule} key={key} />

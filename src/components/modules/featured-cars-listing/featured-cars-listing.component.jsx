@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './featured-cars-listing.styles.scss';
 
-// import { Link } from 'gatsby'
-
-import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
 import FeaturedFlag from '../../helpers/featured-flag/featured-flag.component';
 
-function FeaturedCarsListing({acf, cars}) {
+import { getSelectedCarInfoFromPostObj } from '../../../lib/_helpers.js';
+import { AllCars } from '../../../lib/context/_all-cars.context';
 
+function FeaturedCarsListing({ acf }) {
+
+    const allCars = useContext(AllCars);
+   
     const { car_selection } = acf;
-    const allSelectedCarInformation = getSelectedCarInfoFromPostObj({selectedCars: car_selection, allCars: cars});
+    const allSelectedCarInformation = getSelectedCarInfoFromPostObj({selectedCars: car_selection, allCars: allCars});
 
     return (
         <section className="module has-inner-modules featured-cars-listing container">

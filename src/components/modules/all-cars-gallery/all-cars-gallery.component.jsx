@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './all-cars-gallery.styles.scss'; 
+
 import Arrow from '../../helpers/arrow/arrow.component';
+
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { AllCars } from '../../../lib/context/_all-cars.context';
 
-function AllCarsGallery({ acf, cars }) {
+function AllCarsGallery({ acf }) {
 
-    console.log(acf)
+    const cars = useContext(AllCars);
+    
     let carsPerGroup = 6;
     
     const [activeCarGroupIndex, setActiveCarGroupIndex] = useState(0);

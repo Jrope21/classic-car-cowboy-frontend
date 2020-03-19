@@ -13,10 +13,9 @@ import { GlobalContext } from '../../lib/context/_global.context';
 // TODO -- merge "left side" && "right side" navigation into one
 // - this is no longer needed because of a change in design
 
-function Navigation({ navigation, global }) {
+function Navigation({ navigation }) {
 
     const globalCon = useContext(GlobalContext);
-    console.log('global context', globalCon)
 
     const [navVisible, setNavVisible] = useState(false)
 

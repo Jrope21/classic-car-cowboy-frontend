@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import ModuleController from '../components/modules/module-controller.component';
 
-function Standard({pageContext: { page, cars, global, navigation } }) {
+function Standard({pageContext: { page, cars } }) {
 
     const {acf: { layout }} = page;
 

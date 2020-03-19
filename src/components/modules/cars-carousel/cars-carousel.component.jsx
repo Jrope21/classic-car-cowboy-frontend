@@ -9,9 +9,11 @@ import Arrow from '../../helpers/arrow/arrow.component';
 import CarSlide from './car-slide/car-slide.component';
 
 import { GlobalContext } from '../../../lib/context/_global.context';
+import { AllCars } from '../../../lib/context/_all-cars.context';
 
-function CarsCarousel({ acf, cars }) {
+function CarsCarousel({ acf }) {
 
+    const cars = useContext(AllCars);
     const { facebook_url } = useContext(GlobalContext);
 
     const CarouselCars = cars.slice(0, 10);
